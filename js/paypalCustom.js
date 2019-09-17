@@ -2,7 +2,7 @@ paypal.Buttons({
   createOrder: function(data, actions) {
     return actions.order.create({
       purchase_units: [{
-        description: "15/9/2019 max bye",
+        description: itemName,
         amount: {
           value: '0.01'
         }

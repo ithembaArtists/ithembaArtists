@@ -4,6 +4,36 @@
 <div id='paypal-button-container'></div>
 
 
+<!-- payfast -->
+<form action="https://sandbox.payfast.co.za/eng/process" method="POST">
+
+  <input type="hidden" name="merchant_id" value="10000100">
+  <input type="hidden" name="merchant_key" value="46f0cd694581a">
+  <input type="hidden" name="return_url" value="https://www.yoursite.com/return">
+  <input type="hidden" name="cancel_url" value="https://www.yoursite.com/cancel">
+  <input type="hidden" name="notify_url" value="https://www.yoursite.com/notify">
+
+  
+  <input type="hidden" name="name_first" value="John">
+<input type="hidden" name="name_last" value="Doe">
+<input type="hidden" name="email_address" value="john@doe.com">
+<input type="hidden" name="cell_number" value="0823456789">
+
+<input type="hidden" name="m_payment_id" value="01AB">
+<input type="hidden" name="amount" value="100.00">
+<input type="hidden" name="item_name" value="Test Item">
+<input type="hidden" name="item_description" value="A test product">
+<input type="hidden" name="custom_int1" value="2">
+<input type="hidden" name="custom_str1" value="Extra order information">
+
+
+<input type="hidden" name="email_confirmation" value="1">
+<input type="hidden" name="confirmation_address" value="john@doe.com">
+
+<input type="hidden" name="signature" value="f103e22c0418655fb03991538c51bfd5">
+
+</form>
+
 <script src="js/productDetails.js"></script>
 <script src="https://www.paypal.com/sdk/js?client-id=AX21M-Tpwzwj4xtCc4CLy4BH4d1mRKh8BFyODLRHD9IOdrZSeGDTk8Uh2FoqYLq9JMhYYVtmUnf_g9QR"></script>
 <script src="js/paypalCustom.js"></script>

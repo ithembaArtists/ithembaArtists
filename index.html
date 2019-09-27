@@ -52,8 +52,9 @@
           // htmlString += `${file.name}`;
           
           imgs.push(`${file.name}`);
-          var imageName = ("\"" + `${file.name}`  + "\"").replace(" ", '%20');
-          imageName = '/ithembaArtists/img/1/' + imageName;
+
+          // var imageName = (`${file.name}`).replace(" ", '%20');
+          imageName = '/ithembaArtists/img/1/' + encodeURIComponent(`${file.name}`.trim());
           console.log(imageName);
           var item = "<div class='col-md-4' onclick='goProductDetails(" +  `${file.name}` + ")'> <span>" +  `${file.name}` + "</span><img class='w-100' src=" +  imageName + " alt=''></div>";
           $(".imageGallery .row").append( item );

@@ -32,18 +32,24 @@
       // const response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/');
       var response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/img/');
       var data = await response.json();
+      var folder = [];
       for (let file of data) {
-        htmlString += `${file.name}`;
+        // htmlString += `${file.name}`;
+        folder.push(`${file.name}`);
       }
-      console.log('image folders', htmlString);
-
-      response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/img/1/');
-      data = await response.json();
-      for (let file of data) {
-        // htmlString += `${file.path}">${file.name}`;
-        htmlString += `${file.name}`;
-      }
-      console.log('images', htmlString);
+      // console.log('image folders', htmlString);
+      var imgs = [];
+      folder.forEach(function(c) {
+        console.log(c);
+        response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/img/1/');
+        data = await response.json();
+        for (let file of data) {
+          // htmlString += `${file.path}">${file.name}`;
+          // htmlString += `${file.name}`;
+          img.push(`${file.name}`);
+        }
+      });
+        console.log('images', img);
     })()
   </script>
   

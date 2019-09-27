@@ -37,11 +37,13 @@
         // htmlString += `${file.name}`;
         folder.push(`${file.name}`);
       }
-      // console.log('image folders', htmlString);
+        console.log('folder', folder);
       var imgs = [];
-      folder.forEach(function(c) {
-      //   console.log(c);
-    (async () => {
+
+
+      for (let c of folder) {
+      // folder.forEach(function(c) {
+        console.log(c);
         response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/img/1/');
         data = await response.json();
         for (let file of data) {
@@ -49,9 +51,10 @@
           // htmlString += `${file.name}`;
           imgs.push(`${file.name}`);
         }
-    });
-      });
-        console.log('images', imgs);
+      // });
+        console.log('imgs', imgs);
+
+
     })()
   </script>
   

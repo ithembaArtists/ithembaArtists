@@ -10,6 +10,7 @@
   <body>
     
     <h1> Home page</h1>
+    <!-- <img src="https://ithembaartists.github.io/ithembaArtists/img/1/15_9_2019%20Holland%20Park.png" alt=""> -->
     <section class='imageGallery'>
       <div class='container'>
         <div class='row'></div>
@@ -50,7 +51,8 @@
           // htmlString += `${file.path}">${file.name}`;
           // htmlString += `${file.name}`;
           imgs.push(`${file.name}`);
-          var item = "<div class='col-md-4' onclick='goProductDetails(" +  `${file.name}` + ")'> <span>" +  `${file.name}` + "</span><img class='w-100' src=" +  `${file.name}` + " alt=''></div>";
+          var imageName = ("\"" + `${file.name}`  + "\"").replace(" ", /%20/g);
+          var item = "<div class='col-md-4' onclick='goProductDetails(" +  `${file.name}` + ")'> <span>" +  `${file.name}` + "</span><img class='w-100' src='/1/" +  imageName + "' alt=''></div>";
           $(".imageGallery .row").append( item );
         }
       };

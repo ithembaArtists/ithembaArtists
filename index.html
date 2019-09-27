@@ -39,8 +39,8 @@
       }
       // console.log('image folders', htmlString);
       var imgs = [];
-      folder.forEach(function(c) {
-        console.log(c);
+      // folder.forEach(function(c) {
+      //   console.log(c);
         response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/img/1/');
         data = await response.json();
         for (let file of data) {
@@ -48,7 +48,7 @@
           // htmlString += `${file.name}`;
           img.push(`${file.name}`);
         }
-      });
+      // });
         console.log('images', img);
     })()
   </script>

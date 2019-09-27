@@ -50,9 +50,12 @@
           // htmlString += `${file.path}">${file.name}`;
           // htmlString += `${file.name}`;
           imgs.push(`${file.name}`);
+          var item = "<div class='col-md-4' onclick='goProductDetails(" +  `${file.name}` + ")'> <span>" +  `${file.name}` + "</span><img class='w-100' src=" +  `${file.name}` + " alt=''></div>";
+          $(".imageGallery .row").append( item );
         }
       };
         console.log('imgs', imgs);
+
 
 
     })()

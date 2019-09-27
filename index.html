@@ -50,9 +50,12 @@
         for (let file of data) {
           // htmlString += `${file.path}">${file.name}`;
           // htmlString += `${file.name}`;
+          
           imgs.push(`${file.name}`);
-          var imageName = ("\"" + `${file.name}`  + "\"").replace(" ", /%20/g);
-          var item = "<div class='col-md-4' onclick='goProductDetails(" +  `${file.name}` + ")'> <span>" +  `${file.name}` + "</span><img class='w-100' src='/1/" +  imageName + "' alt=''></div>";
+          var imageName = ("\"" + `${file.name}`  + "\"").replace(" ", '%20');
+          imageName = '/ithembaArtists/img/1/' + imageName;
+          console.log(imageName);
+          var item = "<div class='col-md-4' onclick='goProductDetails(" +  `${file.name}` + ")'> <span>" +  `${file.name}` + "</span><img class='w-100' src=" +  imageName + " alt=''></div>";
           $(".imageGallery .row").append( item );
         }
       };

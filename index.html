@@ -41,7 +41,7 @@
 
       response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/img/1/');
       data = await response.json();
-      let htmlString = '<ul>';
+      htmlString = '<ul>';
       for (let file of data) {
         htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
       }

@@ -8,6 +8,8 @@ Dates vs classes?
  ls -al ~/.ssh
  ssh-add -D 
  ssh-add ~/.ssh/id_rsa_ithemba
- git config user.name "ithembaArtists"
  git config user.email "ithembaartists@gmail.com"
  git remote set-url origin git@github.com:ithembaArtists/ithembaArtists.git
+ 
+ 
+ git config user.name "ithembaArtists"

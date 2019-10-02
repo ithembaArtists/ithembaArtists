@@ -19,25 +19,3 @@ var description = itemName + '.txt';
 fetch('description/' + description)
   .then(response => response.text())
   .then(text => document.getElementById("description").innerText = text );
-
-// readTextFile(description);
-
-// function readTextFile(file)
-// {
-//     var rawFile = new XMLHttpRequest();
-//     console.log(file);
-//     rawFile.open("GET", file, false);
-//     rawFile.onreadystatechange = function ()
-//     {
-//         if(rawFile.readyState === 4)
-//         {
-//             if(rawFile.status === 200 || rawFile.status == 0)
-//             {
-//                 var allText = rawFile.responseText;
-//                 document.getElementById("description").innerText = allText;
-//                 console.log(allText);
-//             }
-//         }
-//     }
-//     rawFile.send(null);
-// }

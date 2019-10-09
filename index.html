@@ -4,7 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>iThemba Arts - Functional Prototype</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   
   <body>
@@ -16,12 +18,134 @@
         <div class='row'></div>
       </div>
     </section>
+
+    <!-- temp -->
+    <style>
+    .nav {
+      flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    
+    }
+
+    .nav-tag {
+    font-size: 0.75em;
+    width: 100%;
+}
+
+.nav-tag:before {
+    color: #979797;
+}
+
+.nav a, .postinfo .tags a {
+    border: 0;
+    padding: 0.25em 0.5em;
+}
+
+.nav-tag:before {
+    content: '-';
+    padding-left: 0.5em;
+}
+
+    .nav-tags {
+    margin-top: 1em; 
+    margin-bottom: 1em;
+    }
+
+    .nav-title {
+      line-height: 1.5;
+    font-size: 0.75em;
+    padding: 0.5em 0;
+    text-transform: uppercase;
+    }
+
+    dt{
+      margin: 0;
+    }
+
+    .l-sidebar {
+      float: left;
+      width: 15.625em;
+      border-bottom: 0;
+      margin: 0 auto;
+      margin-bottom: 1.5625em;
+      padding: 2em;
+}
+    
+
+    </style>
+
+  <aside id="site-sidebar" class="l-sidebar l-block "><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
+    <dl class="nav nav-tags">
+      <dt class="nav-title customfont">Name:</dt>
+      <dd class="nav-tag"><a href="/tagged/Red">chris</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Orange">evan</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Yellow">luke</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Green">micheline</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Blue">ondela</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Black">ronell</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Grey">konaldo</a></dd>
+    </dl>
+  </aside>
+
+
+    <style>
+    .thumbnail {
+      width: 100%;
+      border-radius: 5%;
+      padding-top: 2%;
+    }
+
+    .thumbnail img {
+      border-radius: 5%;
+      width: 100%;
+    }
+
+    .thumbnail p {
+      text-transform: uppercase;
+    font-family: monospace;
+    color: white;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    padding: 12px;
+    padding-top: 16px;
+    border-radius: 100%;
+    background: #ff4040;
+    display: block;
+    width: 55px;
+    height: 55px;
+    }
+
+
+
+
+    </style>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-lg-3 thumbnail'>
+          <p>sold</p>
+          <img src="img/1/15_9_2019 Holland Park.png" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- temp -->
     
     
     
   </body>
   
   <script src="js/jQuery.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/payfastProcessPayment.js"></script>

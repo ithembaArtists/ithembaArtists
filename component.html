@@ -11,6 +11,8 @@
   
   <body>
     
+    <h1> Components page</h1>
+
     <!-- <section class='imageGallery'>
       <div class='container'>
         <div class='row'></div>
@@ -18,7 +20,7 @@
     </section> -->
 
     
-    
+
     <!-- SEARCH BAR -->
     <style>
       .input-group-prepend img{
@@ -28,6 +30,60 @@
     </style>
    
     <!-- search -->
+
+
+    <!-- PRODUCT DETAILS SIDE BAR -->
+    <div class="caption bt">
+      
+      <style>
+      
+        .round{
+          background-color: #5fb0d1;
+          color: #ffffff;
+          display: inline;
+          float: left;
+          margin-right: 0.625em;
+          font-size: 1.5em;
+          text-align: center;
+          font-weight: bold;
+          width: 3.5em;
+          height: 3.5em;
+          line-height: 3.5em;
+          border-radius: 6.25em;
+        } 
+
+        .red {
+          background-color: #ff4040;
+        }
+
+        .blue {
+          background-color: #5fb0d1;
+        }
+
+        @font-face {
+  font-family: 'chalk';
+  src:  url('https://ithembaartists.github.io/ithembaArtists/fonts/ChalkDust.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+h2{
+  font-family: 'chalk', Fallback, sans-serif;
+}
+
+      </style>
+
+      <div class='container col-3'>
+      <h2>
+        <strong>Ambulance</strong>
+      </h2>
+      <blockquote>
+      <p class="round red">€180</p>
+      <p class="round blue">$300</p>
+      </blockquote>
+      <p>Illustration by Paulo Buchinho.</p>
+      <p>This illustration is part of a set created for an image bank by the illustrator Paulo Buchinho.</p>
+    </div>
+
+    <!-- sidebar -->
     
     <!-- NAV -->
     <style>
@@ -89,34 +145,16 @@
       margin-bottom: 1.5625em;
       padding: 2em;
 }
-
-.tempBorderAside{
-  border: red solid 2px;
-}
-
-
-.input-group-prepend {
-  height: 33px;
-}
-
-.input-group-prepend img {
-  margin-top: -8px;
-}
-    
-.form-control, .form-control::placeholder {
-  font-size: 0.8em;
-  text-transform: uppercase;
-}
     
 
     </style>
 
-  <aside id="site-sidebar" class="tempBorderAside l-sidebar l-block "><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
+  <aside id="site-sidebar" class="l-sidebar l-block "><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
     <dl class="nav nav-tags">
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="bg-info btn" id="basic-addon1">
+              <span class="btn-info btn" id="basic-addon1">
                 <img src="img/website/magnifying-glass.png">
               </span>
             </div>
@@ -125,7 +163,7 @@
               <span class="btn btn-info">search</span>
             </div>
           </div>
-     
+    
 
 
       <dt class="nav-title customfont">Name:</dt>
@@ -163,65 +201,21 @@
     padding: 12px;
     padding-top: 16px;
     border-radius: 100%;
+    background: #ff4040;
     display: block;
     width: 55px;
     height: 55px;
-    background: #ff4040;
-    }
-
-    .red {
-    }
-
-    .blue p {
-    background: #5fb0d1;
-    padding-left: 17px;
-    }
-
-    .galleryBorder {
-      border: green solid 2px;
-    }
-
-    .thumbnail img {
-      border:#f1f0f0 solid 1px;
     }
 
     </style>
-      <div class='row galleryBorder mr-5'>
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/1.png" alt="">
-        </div>
-        
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/2.png" alt="">
-        </div>
-
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/3.png" alt="">
-        </div>
-      
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/4.png" alt="">
-        </div>
-   
-        <div class='col-md-4 mt-5 thumbnail new'>
-          <img src="img/1/5.png" alt="">
-        </div>
-
-        <div class='col-md-4 mt-5 thumbnail red new'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-lg-3 thumbnail'>
           <p>sold</p>
-          <img src="img/1/6.png" alt="">
+          <img src="img/1/15_9_2019 Holland Park.png" alt="">
         </div>
-
-        <div class='col-md-4 mt-5 thumbnail red new'>
-          <p>sold</p>
-          <img src="img/1/7.png" alt="">
-        </div>
-      
       </div>
+    </div>
     <!-- thumbnail -->
     
     

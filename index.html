@@ -10,6 +10,96 @@
   </head>
   
   <body>
+
+
+    <!-- NAVBAR -->
+    <style>
+    .navImage {
+      filter: invert(1);
+    float: left;
+    height: 25px;
+    margin-top: 6px;
+    }
+
+
+.ithembaBanner {
+  width: 300px;
+}
+
+
+/* anything more than 990 */
+    @media (min-width: 990px) {
+      .nav-link {
+      float: right;
+    }
+
+    .navbar-nav {
+      position: absolute; 
+      right: 5px;
+    }
+
+    .nav-item{
+      border-left: 1px solid black;
+    padding-left: 15px;
+    }
+
+}
+
+/* anything less than 990 */
+    @media (max-width: 990px) {
+    .nav-item{
+      border-top: 1px solid black;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    }
+  .navImage {
+    margin-right: 20px;
+  }
+
+  .navbar {
+    padding: 0 1rem 0 1rem;
+  }
+.ithembaBanner{
+  margin-bottom: 10px;
+}
+
+}
+
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="img/website/nav/banner.png" class="ithembaBanner">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <img class='navImage' src="img/website/nav/Home_House_w.png" alt="">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <img class='navImage' src="img/website/nav/About_i_w.png" alt="">
+                <a class="nav-link" href="#">About us</a>
+              </li>
+              
+              <li class="nav-item">
+                  <img class='navImage' src="img/website/nav/pictures_w.png" alt="">
+                  <a class="nav-link" href="#">Photo gallery</a>
+                </li>
+                <li class="nav-item">
+                    <img class='navImage' src="img/website/nav/Sponsorship_w.png" alt="">
+                    <a class="nav-link" href="#">Sponsership</a>
+                  </li>
+                  <li class="nav-item">
+                      <img class='navImage' src="img/website/nav/Contact_w.png" alt="">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            
+          </ul>
+  
+        </div>
+      </nav>
+    <!-- navbar -->
     
     <!-- <section class='imageGallery'>
       <div class='container'>
@@ -128,6 +218,15 @@
      
 
 
+      <dt class="nav-title customfont">Name:</dt>
+      <dd class="nav-tag"><a href="/tagged/Red">chris</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Orange">evan</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Yellow">luke</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Green">micheline</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Blue">ondela</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Black">ronell</a></dd>
+      <dd class="nav-tag"><a href="/tagged/Grey">konaldo</a></dd>
+    </dl>
       <dt class="nav-title customfont">Name:</dt>
       <dd class="nav-tag"><a href="/tagged/Red">chris</a></dd>
       <dd class="nav-tag"><a href="/tagged/Orange">evan</a></dd>

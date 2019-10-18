@@ -121,77 +121,19 @@
     <!-- navbar -->
     <!-- COVER PHOTO -->
     <style>
-    
-  @font-face {
-  font-family: 'BebasNeue';
-  src: url('fonts/BebasNeue.ttf') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/BebasNeue.woff')  format('truetype'); /* Safari, Android, iOS */
-}
-
-.buyArtTitle {
-  font-family: 'BebasNeue', Fallback, sans-serif;
-    color: white;
-    font-family: 'BebasNeue', Fallback, sans-serif;
-    padding-top: 161px;
-    font-weight: bold;
-    left: 20px;
-    font-size: 65px;
-    padding-top: 90px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-.buyArtBlurb {
-  color: white;
-  max-width: 600px;
-    padding-bottom: 25px;
-}
-
-
-.bannerDesktop{
-  width: 100%;
-  min-width: 800px;
-}
-
-.kidsImage{ 
-  position: absolute;
-    top: 90px;
-    right: 0px;
-    width: 440px;
-}
 
   .header {
     background: url('img/website/header/bg-image.png');
     background-size: cover;
     padding-left: 23px;
     padding-right: 23px;
-    height: 350px;
-    border-bottom: 6px solid #075b13;
+    height:80px;
 }
 
-.tempPadding {
-  padding: 0px;
-}
-
-/* anything less than 1065 */
-@media (max-width: 1030px) {
-  .kidsImage {
-    visibility: hidden;
-  }
-}
     </style>
 
-    <div class='header'>
-
-      <h2 class='buyArtTitle moveLeft'> BUY ART & </h2>
-      <h2 class='buyArtTitle tempPadding'>SPONSoR A CHILD’S EDUCATION </h2>
-      <p class='buyArtBlurb'>iThemba School Capricorn is a pre-primary school for 75 children between the age of 3 and 6 years old. Your contributions will help provide a safe and creative learning enviroment where children can flourish and develop to their full potential.</p>
-      
-      <!-- <img src="img/website/header/bg-image.png" alt=""> -->
-      
-      <!-- <img src="img/website/banner.png" alt="banner desktop image" class='bannerDesktop'> -->
-      <img src="img/website/nav/kids.png" alt="kids image" class='kidsImage'>
-    </div>
+    <div class='header'></div>
+    <p class='alert alert-info'>Just want to make a donation <a href=""><u>please click here.</u></a> </p>
 
 
       <!-- cover photo -->
@@ -297,7 +239,7 @@ dl {
 
     </style>
 
-  <aside id="site-sidebar" class="l-sidebar l-block "><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
+  <aside id="site-sidebar" class="l-sidebar l-block d-none d-xl-block"><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
     <dl class="nav nav-tags">
 
         <div class="input-group mb-3">
@@ -352,20 +294,17 @@ dl {
   </aside>
   <!-- nav -->
 
-  <!-- THUMBNAIL -->
+  <!-- profilePic -->
     <style>
-    .thumbnail {
-      width: 100%;
-      border-radius: 5%;
-      padding-top: 2%;
-    }
-
-    .thumbnail img {
-      border-radius: 5%;
+    .profilePic {
       width: 100%;
     }
 
-    .thumbnail p {
+    .profilePic img {
+      width: 100%;
+    }
+
+    .profilePic p {
       text-transform: uppercase;
     font-family: monospace;
     color: white;
@@ -381,72 +320,184 @@ dl {
     background: #ff4040;
     }
 
-    .red {
-    }
-
     .blue p {
     background: #5fb0d1;
     padding-left: 17px;
     }
 
-    .thumbnail img {
+    .profilePic img {
       border:#f1f0f0 solid 1px;
     }
 
     </style>
-      <div class='row mr-5'>
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/1.png" alt="">
-        </div>
-        
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/2.png" alt="">
-        </div>
 
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/3.png" alt="">
-        </div>
+
+
+<!-- PICTURE -->
+<style>
       
-        <div class='col-md-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img src="img/1/4.png" alt="">
-        </div>
-   
-        <div class='col-md-4 mt-5 thumbnail new'>
-          <img src="img/1/5.png" alt="">
-        </div>
+  .round{
+    background-color: #5fb0d1;
+    color: #ffffff;
+    display: inline;
+    float: left;
+    margin-right: 0.625em;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    width: 3.5em;
+    height: 3.5em;
+    line-height: 3.5em;
+    border-radius: 6.25em;
+    margin-bottom: 10px;
+  } 
 
-        <div class='col-md-4 mt-5 thumbnail red new'>
-          <p>sold</p>
-          <img src="img/1/6.png" alt="">
-        </div>
+  .red {
+    background-color: #ff4040;
+  }
 
-        <div class='col-md-4 mt-5 thumbnail red new'>
-          <p>sold</p>
-          <img src="img/1/7.png" alt="">
+  .blue {
+    background-color: #5fb0d1;
+    border: 0;
+  }
+
+  @font-face {
+font-family: 'chalk';
+src:  url('https://ithembaartists.github.io/ithembaArtists/fonts/ChalkDust.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'ChalkDust';
+  src: url('fonts/ChalkDust.ttf') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/ChalkDust.woff')  format('truetype'); /* Safari, Android, iOS */
+}
+
+.buyArtTitle {
+  font-family: 'ChalkDust', sans-serif;
+}
+
+.kidsName{
+font-family: 'ChalkDust', sans-serif;
+font-size: 2rem;
+}
+
+.currencyDisclaimer {
+  color:  #5eb0d1;
+    font-size: 12px;
+    padding: 0px;
+
+}
+.picture{
+  border-bottom: solid 1px #d6d6d6;
+}
+
+</style>
+<!-- details -->
+
+  <div class='picture row m-5 pb-5'>
+    <div class='col-md-8 profilePic'>
+      <img src="img/1/1.png" alt="">
+    </div>            
+    <!-- profilePic -->
+    <!-- DETAILS -->
+    <div class='col-md-4'>
+      <h2 class="kidsName">
+        Child's Name
+      </h2>
+
+      <div class='row'>
+        <div class='col-4'>
+          <blockquote>            
+            <p class="round red">€18</p>
+          </blockquote>
         </div>
-      
+        <div class='col-6'>
+          <p class="round blue">BUY</p>
+          <div class="mt-3 dropdown">
+            <button hidden class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose country
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>                  
+        </div>              
+      </div> <!-- row -->
+
+      <p class='currencyDisclaimer'>
+        <u>
+          Price is displayed in the wrong currency?
+        </u>
+      </p>
+          
+
+      <p> This is a description that you can add to a kid's painting to give it more context. </p>
+      <div class="alert alert-info" role="alert">                
+        <b>  Just to clarify, </b><br>
+        you will be sent the original drawing and your money will sponsor the artist and their classmates education. 
       </div>
-    <!-- thumbnail -->
-    
-    
-    
+    </div>        
+    </div>        
+    <!-- picture -->
+      
+    <!-- EXTRAS -->
+    <style>
+      @font-face {
+        font-family: 'BebasNeue';
+        src: url('fonts/BebasNeue.ttf') format('woff'), /* Pretty Modern Browsers */
+            url('fonts/BebasNeue.woff')  format('truetype'); /* Safari, Android, iOS */
+      }
+
+      .extras {
+        font-family: 'BebasNeue', Fallback, sans-serif;
+        text-transform: uppercase;
+        font-size: 3rem;
+      }
+
+      .videoPreview{ 
+        width: 100%;
+      }
+
+      .purchaseVideo {
+        background-color: #ff4040;
+    position: absolute;
+    right: -40px;
+    top: -35px;
+      }
+    </style>
+    <section class="row m-5 pb-5">
+      <div class='col-6'>
+      <h2 class='extras'>Get a message from the artist!</h2>
+        <p>
+          For €10 the CHILD'S NAME will send a thank you message.
+          Buying for a friend? Enter their name in checkout and we will email a personalized video to them. <br><br> 
+          Your investment is making a huge impact on these kids lives so we ensure every video is personal and meaningful.        
+          The video is yours so you are free to download, watch and share this video as much as you want.       
+        </p>
+        <button class='blue btn btn-lg btn-info'> + Add Video Message </button>
+      </div>
+      <div class='col-6 pt-2'>
+          <p class="round red purchaseVideo">€18</p>
+        <img class='videoPreview' src="img/website/extras/videoPreview.png" alt="">
+      </div>
+    </section>
+    <!-- extras -->
   </body>
   
-  <!-- <script src="js/jQuery.js"></script>
+
+  <script src="js/jQuery.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="js/payfastProcessPayment.js"></script>
   <script src="js/photoGallery.js"></script>
-  <script src='js/githubFileFetch.js'></script> -->
+  <!-- <script src='js/githubFileFetch.js'></script> -->
   
   <!-- <div w3-include-html="photoGallery.html"></div> -->
-  <!-- <script src="js/includeJS.js"></script>   -->
+  <!-- <script src="js/includeJS.js"></script>  
 
 </body>
 </html>

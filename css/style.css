@@ -1,0 +1,12 @@
+.frontPage{
+  text-align: center;
+  display: block;
+  text-align: -webkit-center;
+  background: #9dd7e1;
+  background: url(../img/seigaiha.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}

@@ -241,21 +241,19 @@ dl {
 
   <aside id="site-sidebar" class="l-sidebar l-block d-none d-xl-block"><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
     <dl class="nav nav-tags">
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="bg-info btn" id="basic-addon1">
-                <img src="img/website/magnifying-glass.png">
-              </span>
-            </div>
-            <input type="text" class="form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
-            <div hidden class="input-group-append">
-              <span class="btn btn-info">search</span>
-            </div>
-          </div>
-     
-
-  <dl>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="bg-info btn" id="basic-addon1">
+            <img src="img/website/magnifying-glass.png">
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
+        <div hidden class="input-group-append">
+          <span class="btn btn-info">search</span>
+        </div>
+      </div>
+    </dl>
+    <dl>
       <dt class="nav-title customfont">Name:</dt>
       <dd class="nav-tag"><a href="/tagged/Red">chris</a></dd>
       <dd class="nav-tag"><a href="/tagged/Orange">evan</a></dd>
@@ -353,11 +351,11 @@ dl {
   } 
 
   .red {
-    background-color: #ff4040;
+    background-color: #ff4040 !important;
   }
 
   .blue {
-    background-color: #5fb0d1;
+    background-color: #5fb0d1 !important;
     border: 0;
   }
 
@@ -442,7 +440,7 @@ font-size: 2rem;
     </div>        
     <!-- picture -->
       
-    <!-- EXTRAS -->
+    <!-- VIDEO FROM ARTIST -->
     <style>
       @font-face {
         font-family: 'BebasNeue';
@@ -462,16 +460,25 @@ font-size: 2rem;
 
       .purchaseVideo {
         background-color: #ff4040;
-    position: absolute;
-    right: -40px;
-    top: -35px;
+        position: absolute;
+        right: -40px;
+        top: -35px;
+      }
+
+      .artistVideo, .frames {
+        border-bottom: solid 1px #d6d6d6;
+      }
+
+      .form-group{
+        width:100%;
       }
     </style>
-    <section class="row m-5 pb-5">
+    <section class='row m-5'>
+    <section class="artistVideo pb-5 row">
       <div class='col-6'>
       <h2 class='extras'>Get a message from the artist!</h2>
         <p>
-          For €10 the CHILD'S NAME will send a thank you message.
+          For an additional €11, the CHILD'S NAME will send a thank you message.
           Buying for a friend? Enter their name in checkout and we will email a personalized video to them. <br><br> 
           Your investment is making a huge impact on these kids lives so we ensure every video is personal and meaningful.        
           The video is yours so you are free to download, watch and share this video as much as you want.       
@@ -479,11 +486,100 @@ font-size: 2rem;
         <button class='blue btn btn-lg btn-info'> + Add Video Message </button>
       </div>
       <div class='col-6 pt-2'>
-          <p class="round red purchaseVideo">€18</p>
+          <p class="round blue purchaseVideo">€11</p>
         <img class='videoPreview' src="img/website/extras/videoPreview.png" alt="">
       </div>
     </section>
-    <!-- extras -->
+    <!-- video from artist -->
+
+    <!-- FRAMES / EXTRAS -->
+    <section class='frames row pt-5 pb-5'> 
+      <div class='col-12'>
+        <h2 class='extras'>Accessorize</h2>
+        <p>
+          We provide a number of options to help your new art piece and make it really stand out.
+          Adding extras not only adds a new level of glitz to your purchase but all profit is re-invested into the school.
+          If there's any additional options you would like to see, please let us know! We're always looking for new ways to raise.
+        </p>
+      </div>
+      <div class='col-6'>
+        <img src="img/website/extras/frame-with-padding.png" width="100%">
+        <div class='row'>
+        <div class="col-6">
+          <img src="img/website/extras/frame.png" alt="" class='w-100'>
+        </div>
+        <div class="col-6">
+          <img src="img/website/extras/giftWrap.png" alt="" class='w-100'>
+        </div>
+      </div>
+      </div>
+      <div class='col-6'>
+
+
+          <div class="container d-flex h-100">
+              <div class="row  align-self-center">
+
+        <style>
+        .small-price{
+    position: initial !important;
+    font-size: 0.8em;
+    font-weight: 100;
+    margin-top: -10px;
+    margin-left: 8px;
+        }
+
+        .priceLabel {
+          float: left;
+        }
+        </style>
+        <div class='form-group form-check'>
+          <input selected='true' checked type="checkbox" class='form-check-input' id='exampleCheck'>
+          <p class='priceLabel form-check-label' for='exampleCheck1'>Frame with mount </p>
+          <p class="round red purchaseVideo small-price">€18</p>
+        </div>
+        <div class='form-group form-check'>
+          <input type="checkbox" class='form-check-input' id='exampleCheck'>
+          <p class='priceLabel form-check-p' for='exampleCheck1'>Frame without mount </p>
+          <p class="round red purchaseVideo small-price">€9</p>
+        </div>
+        <div class='form-group form-check'>
+          <input type="checkbox" class='form-check-input' id='exampleCheck'>
+          <p class='priceLabel form-check-label' for='exampleCheck1'>Gift wrap </p>
+          <p class="round red purchaseVideo small-price">€7</p>
+        </div>
+        <div class='form-group form-check'>
+          <input type="checkbox" class='form-check-input' id='exampleCheck'>
+          <p class='priceLabel form-check-label' for='exampleCheck1'>Written message from child </p>
+          <p class="round red purchaseVideo small-price">€8</p>
+        </div>
+        <div class='form-group form-check'>
+          <input type="checkbox" class='form-check-input' id='exampleCheck'>
+          <p class='priceLabel form-check-label' for='exampleCheck1'>I would like something else...</p>        
+        </div>
+        <div class='form-group' hidden>
+          <p class='mb-1'>What would you like bundled with your image:</p>
+          <textarea class='w-100' name="" id="" rows="3"></textarea>          
+          <p class='mb-0'>I'm willing to pay: </p>
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">€</span>
+              </div>
+              <input type="number" class="form-control col-3" placeholder="amount" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+      
+          </div>
+
+          <button class="mt-4 w-50 red btn btn-lg btn-danger"> + Add Extras </button>
+
+        </div>
+      </div>
+
+      </div>
+    </section>
+    </section>
+    <!-- frames / extras -->
+
+
   </body>
   
 

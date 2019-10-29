@@ -1,0 +1,94 @@
+/* anything less than 1030 */
+@media (max-width: 1030px) {
+  .kidsImage {
+    visibility: hidden;
+  }
+}
+
+/* anything less than 990 */
+@media (max-width: 990px) {
+
+  .footer-image {
+    display: none;
+  }
+
+
+  .nav-item{
+    border-top: 1px solid black;
+    margin-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .nav-image {
+    margin-right: 20px;
+    filter: invert(1);
+    margin-left: 20px;
+  }
+
+  .navbar {
+    padding: 0 1rem 0 1rem;
+  }
+  .ithembaBanner{
+    margin-bottom: 10px;
+  }
+
+  .navbar-collapse {
+    z-index: 10000;
+    margin-top: -15px;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+  #site-sidebar {
+    display: none;
+  }
+
+  .searchFilters {
+    display: block;
+  }
+
+  .donationLarge{
+    display: none;
+  }
+
+  .thumbnailGallery {
+    margin-left: 3rem!important;
+  }
+
+}
+
+/* anything less than 648 */
+@media (max-width: 648px) {
+  .buyArtTitle {
+    font-size: 45px;
+  }
+}
+
+/* anything less than 468 */
+@media (max-width: 468px) {
+  .header {
+    height: auto;
+  }
+}
+
+/* anything less than 340 */
+@media (max-width: 340px) {
+  .ithembaBanner {
+    width: 200px;
+    padding-top: 15px;
+  }
+}
+
+/* anything less than 340 */
+@media (max-width: 290px) {
+  .ithembaBanner {
+    display: none;
+  }
+
+  .navbar {
+    padding: auto;
+    padding-top: 10px;
+  }
+}
+
+

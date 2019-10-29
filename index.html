@@ -7,110 +7,40 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/less.css">
+    <link rel="stylesheet" href="css/more.css">
   </head>
   
   <body>
 
-
     <!-- NAVBAR -->
-    <style>
-
-      .navbar{
-        position: absolute;
-        width: 100%;
-        background: none;
-      }
-
-    .navImage {
-    float: left;
-    height: 25px;
-    margin-top: 6px;
-    }
-
-
-.ithembaBanner {
-  width: 250px;
-}
-
-/* anything more than 990 */
-    @media (min-width: 990px) {
-      .nav-link {
-      float: right;
-    }
-
-    .navbar-nav {
-      position: absolute; 
-      right: 5px;
-    }
-
-    .nav-item{
-      border-left: 1px solid white;
-    padding-left: 15px;
-    }
-    .nav-link {
-      color: white !important;
-    }
-
-}
-
-/* anything less than 990 */
-    @media (max-width: 990px) {
-
-    .nav-item{
-      border-top: 1px solid black;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    }
-
-  .navImage {
-    margin-right: 20px;
-    filter: invert(1);
-    margin-left: 20px;
-  }
-
-  .navbar {
-    padding: 0 1rem 0 1rem;
-  }
-.ithembaBanner{
-  margin-bottom: 10px;
-}
-
-.navbar-collapse {
-  z-index: 10000;
-  margin-top: -15px;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-
-}
-
-    </style>
     <nav class="navbar navbar-expand-lg navbar-light">
         <img src="img/website/nav/banner.png" class="ithembaBanner">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse bg-light" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <img class='navImage' src="img/website/nav/Home_House_w.png" alt="">
+              <img class='nav-image' src="img/website/nav/Home_House_w.png" alt="">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <img class='navImage' src="img/website/nav/About_i_w.png" alt="">
+                <img class='nav-image' src="img/website/nav/About_i_w.png" alt="">
                 <a class="nav-link" href="#">About us</a>
               </li>
               
               <li class="nav-item">
-                  <img class='navImage' src="img/website/nav/pictures_w.png" alt="">
+                  <img class='nav-image' src="img/website/nav/pictures_w.png" alt="">
                   <a class="nav-link" href="#">Photo gallery</a>
                 </li>
                 <li class="nav-item">
-                    <img class='navImage' src="img/website/nav/Sponsorship_w.png" alt="">
+                    <img class='nav-image' src="img/website/nav/Sponsorship_w.png" alt="">
                     <a class="nav-link" href="#">Sponsership</a>
                   </li>
                   <li class="nav-item">
-                      <img class='navImage' src="img/website/nav/Contact_w.png" alt="">
+                      <img class='nav-image' src="img/website/nav/Contact_w.png" alt="">
               <a class="nav-link" href="#">Contact</a>
             </li>
             
@@ -120,66 +50,6 @@
       </nav>
     <!-- navbar -->
     <!-- COVER PHOTO -->
-    <style>
-    
-  @font-face {
-  font-family: 'BebasNeue';
-  src: url('fonts/BebasNeue.ttf') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/BebasNeue.woff')  format('truetype'); /* Safari, Android, iOS */
-}
-
-.buyArtTitle {
-  font-family: 'BebasNeue', Fallback, sans-serif !important;
-    color: white;
-    font-family: 'BebasNeue', Fallback, sans-serif;
-    font-weight: bold;
-    left: 20px;
-    font-size: 65px;
-    padding-top: 90px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-}
-
-.buyArtBlurb {
-  color: white;
-  max-width: 600px;
-    padding-bottom: 25px;
-}
-
-
-.bannerDesktop{
-  width: 100%;
-  min-width: 800px;
-}
-
-.kidsImage{ 
-  position: absolute;
-    top: 90px;
-    right: 0px;
-    width: 440px;
-}
-
-  .header {
-    background: url('img/website/header/bg-image.png');
-    background-size: cover;
-    padding-left: 23px;
-    padding-right: 23px;
-    height: 350px;
-    border-bottom: 6px solid #075b13;
-}
-
-.tempPadding {
-  padding: 0px;
-}
-
-/* anything less than 1065 */
-@media (max-width: 1030px) {
-  .kidsImage {
-    visibility: hidden;
-  }
-}
-    </style>
-
     <div class='header'>
 
       <h2 class='buyArtTitle moveLeft'> BUY ART & </h2>
@@ -192,255 +62,301 @@
       <img src="img/website/nav/kids.png" alt="kids image" class='kidsImage'>
     </div>
 
-
-      <!-- cover photo -->
-
-    <!-- GALLERY -->
-    <!-- <section class='imageGallery'>
-      <div class='container'>
-        <div class='row'></div>
+    <div class='alert alert-info'>
+      <!-- SEARCH & FILTERS DROP-DOWN-->
+      <div class='text-center searchFilters' onclick='toogleNav()'>
+        <p class='m-0 mr-2'><a href=''><u>search</u></a> & <a href=''><u>filters</u></a></p> 
+        <span class='h3 p-0'> ⤓ </span>
       </div>
-    </section> -->
-    <!-- gallery -->
+      <!-- dropdown -->
 
+      <!-- SEARCH & FILTERS TABLES-->
+      <p class='donationLarge m-0'>Just want to make a donation <a href=""><u>please click here.</u></a></p> 
+      <div class='donationFilterContainer'>
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="bg-info btn" id="basic-addon1">
+              <img src="img/website/magnifying-glass.png">
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
+          <div hidden="" class="input-group-append">
+            <span class="btn btn-info">search</span>
+          </div>
+        </div>
+     
+        <div class='row'>
+        <div class='col-sm-3'>
+        <p><b> NAME: </b></p>
+        <ul class='pl-3'>
+        <li><p> chris</p></li>
+        <li><p> evan</p></li>
+        <li><p> luke</p></li>
+        <li><p>  micheline</p></li>
+        <li><p> ondela</p></li>
+        <li> <p> ronell</p></li>
+        <li> <p> konaldo</p></li>
+        </ul>
+        </div>
+        <div class='col-sm-3'>
+          <p><b> OCCASION:</b></p>
+          <ul class='pl-3'>
+            <li><p>Christmas</p></li>
+            <li><p>Birthday</p></li>
+          </ul>
+        </div>
+        <div class='col-sm-3'>
+            <p><b> DATE:</b></p>
+            <ul class='pl-3'>
+            <li><p>September 2019</p></li>
+            <li><p>August 2019</p></li>
+            <li><p>July 2019</p></li>
+          </ul>
+        </div>
+        <div class='col-sm-3'>
+          <p><b> CHILD'S AGE:</b></p>
+          <ul class='pl-3'>
+            <li><p>3</p></li>
+            <li><p>3</p></li>
+            <li><p>4</p></li>
+            <li><p>5</p></li>
+            <li><p>6</p></li>
+          </ul>
+        </div>
+      </div>
     
-    
-    <!-- SEARCH BAR -->
-    <style>
-      .input-group-prepend img{
-        filter: invert(1);
-        width: 13px;
-      }
-    </style>
-   
-    <!-- search -->
+      <div class='text-center'>
+        <p>Or just want to make a donation? 
+        <a href=""><u>Please click here</u></a>.</p>  
+        <div onclick='toogleNav()'>
+          <span class='h3 p-0'> ⤒ </span>
+          <p class='m-0 mr-2'>hide search & filters</p> 
+        </div>
+
+      </div>
+        <!-- tables -->
+    </div>
+  </div>
+  <!-- cover photo -->
     
     <!-- NAV -->
-    <style>
-    .nav {
-      flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    
-    }
-
-    .nav-tag {
-    font-size: 0.75em;
-    width: 100%;
-}
-
-.nav-tag:before {
-    color: #979797;
-}
-
-.nav a, .postinfo .tags a {
-    border: 0;
-    padding: 0.25em 0.5em;
-}
-
-.nav-tag:before {
-    content: '-';
-    padding-left: 0.5em;
-}
-
-    .nav-tags {
-    margin-top: 1em; 
-    margin-bottom: 1em;
-    }
-
-    .nav-title {
-      line-height: 1.5;
-    font-size: 0.75em;
-    padding: 0.5em 0;
-    text-transform: uppercase;
-    }
-
-    dt{
-      margin: 0;
-    }
-
-    .l-sidebar {
-      float: left;
-      width: 15.625em;
-      border-bottom: 0;
-      margin: 0 auto;
-      margin-bottom: 1.5625em;
-      padding: 2em;
-}
-
-.input-group-prepend {
-  height: 33px;
-}
-
-.input-group-prepend img {
-  margin-top: -8px;
-}
-    
-.form-control, .form-control::placeholder {
-  font-size: 0.8em;
-  text-transform: uppercase;
-}
-
-dl {
-  width: 100%;
-}
-    
-
-    </style>
-
-  <aside id="site-sidebar" class="l-sidebar l-block "><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
+    <div class='row'>
+  <aside id="site-sidebar" class="col-3"><!-- BEGIN site nav -->
+    <nav id="site-nav" class="pl-3 l-block">
     <dl class="nav nav-tags">
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="bg-info btn" id="basic-addon1">
-                <img src="img/website/magnifying-glass.png">
-              </span>
-            </div>
-            <input type="text" class="form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
-            <div hidden class="input-group-append">
-              <span class="btn btn-info">search</span>
-            </div>
-          </div>
-     
+    <!-- SEARCH BAR -->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="bg-info btn" id="basic-addon1">
+            <img src="img/website/magnifying-glass.png">
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
+        <div hidden class="input-group-append">
+          <span class="btn btn-info">search</span>
+        </div>
+      </div>
+     <!-- search -->
 
   <dl>
-      <dt class="nav-title customfont">Name:</dt>
-      <dd class="nav-tag"><a href="/tagged/Red">chris</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Orange">evan</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Yellow">luke</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Green">micheline</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Blue">ondela</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Black">ronell</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Grey">konaldo</a></dd>
+    <dt class="nav-title customfont">Name:</dt>
+    <dd class="nav-tag"><a href="/tagged/Red">chris</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Orange">evan</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Yellow">luke</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Green">micheline</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Blue">ondela</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Black">ronell</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Grey">konaldo</a></dd>
+  </dl>
 
-    </dl>
-
-    <dl>
-      <dt class="nav-title customfont">Occasion:</dt>
-      <dd class="nav-tag"><a href="/tagged/Red">Christmas</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Orange">Birthday</a></dd>
-    </dl>
-    <dl>
-      <dt class="nav-title customfont">Painting size:</dt>
-      <dd class="nav-tag"><a href="/tagged/Red">Large</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Orange">Medium</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Orange">Card</a></dd>
-    </dl>
-    <dl>
-      <dt class="nav-title customfont">Date:</dt>
-      <dd class="nav-tag"><a href="/tagged/Red">September 2019</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Orange">August 2019</a></dd>
-      <dd class="nav-tag"><a href="/tagged/Orange">July 2019</a></dd>
-    </dl>
-    <dl>
-  <dt class="nav-title customfont">Child's Age:</dt>
-  <dd class="nav-tag"><a href="/tagged/Red">3</a></dd>
-  <dd class="nav-tag"><a href="/tagged/Orange">4</a></dd>
-  <dd class="nav-tag"><a href="/tagged/Yellow">5</a></dd>
-  <dd class="nav-tag"><a href="/tagged/Green">6</a></dd>
-</dl>
+  <dl>
+    <dt class="nav-title customfont">Occasion:</dt>
+    <dd class="nav-tag"><a href="/tagged/Red">Christmas</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Orange">Birthday</a></dd>
+  </dl>
+  <dl>
+    <dt class="nav-title customfont">Painting size:</dt>
+    <dd class="nav-tag"><a href="/tagged/Red">Large</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Orange">Medium</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Orange">Card</a></dd>
+  </dl>
+  <dl>
+    <dt class="nav-title customfont">Date:</dt>
+    <dd class="nav-tag"><a href="/tagged/Red">September 2019</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Orange">August 2019</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Orange">July 2019</a></dd>
+  </dl>
+  <dl>
+    <dt class="nav-title customfont">Child's Age:</dt>
+    <dd class="nav-tag"><a href="/tagged/Red">3</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Orange">4</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Yellow">5</a></dd>
+    <dd class="nav-tag"><a href="/tagged/Green">6</a></dd>
+  </dl>
   </aside>
   <!-- nav -->
 
   <!-- THUMBNAIL -->
-    <style>
-    .thumbnail {
-      width: 100%;
-      border-radius: 5%;
-      padding-top: 2%;
-    }
-
-    .thumbnail img {
-      border-radius: 5%;
-      width: 100%;
-    }
-
-    .thumbnail p {
-      text-transform: uppercase;
-    font-family: monospace;
-    color: white;
-    position: absolute;
-    right: -10px;
-    top: -10px;
-    padding: 12px;
-    padding-top: 16px;
-    border-radius: 100%;
-    display: block;
-    width: 55px;
-    height: 55px;
-    background: #ff4040;
-    }
-
-    .red {
-    }
-
-    .blue p {
-    background: #5fb0d1;
-    padding-left: 17px;
-    }
-
-    .thumbnail img {
-      border:#f1f0f0 solid 1px;
-    }
-
-    </style>
-      <div class='row mr-5'>
-        <div class='col-md-4 mt-5 thumbnail blue new'>
+    <div class='col-lg-9'>
+      <div class='thumbnailGallery row mr-5 mb-5'>
+        <div class='col-sm-4 mt-5 thumbnail blue new'>
           <p>new</p>
           <img src="img/1/1.png" alt="">
         </div>
         
-        <div class='col-md-4 mt-5 thumbnail blue new'>
+        <div class='col-sm-4 mt-5 thumbnail blue new'>
           <p>new</p>
           <img src="img/1/2.png" alt="">
         </div>
 
-        <div class='col-md-4 mt-5 thumbnail blue new'>
+        <div class='col-sm-4 mt-5 thumbnail blue new'>
           <p>new</p>
           <img src="img/1/3.png" alt="">
         </div>
       
-        <div class='col-md-4 mt-5 thumbnail blue new'>
+        <div class='col-sm-4 mt-5 thumbnail blue new'>
           <p>new</p>
           <img src="img/1/4.png" alt="">
         </div>
    
-        <div class='col-md-4 mt-5 thumbnail new'>
+        <div class='col-sm-4 mt-5 thumbnail new'>
           <img src="img/1/5.png" alt="">
         </div>
 
-        <div class='col-md-4 mt-5 thumbnail red new'>
+        <div class='col-sm-4 mt-5 thumbnail red new'>
           <p>sold</p>
           <img src="img/1/6.png" alt="">
         </div>
 
-        <div class='col-md-4 mt-5 thumbnail red new'>
+        <div class='col-sm-4 mt-5 thumbnail red new'>
           <p>sold</p>
           <img src="img/1/7.png" alt="">
         </div>
       
       </div>
+    </div>
+  </div>
     <!-- thumbnail -->
     
+    <!-- FOOTER -->
+    <footer class="pt-5 page-footer font-small pt-4">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+  
+          <!-- Grid row -->
+          <div class="row">
+  
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+  
+              <!-- Content -->
+              <h5 class="text-uppercase">BUY ART & SPONSOR A CHILD’S EDUCATION</h5>
+              <p>iThemba School Capricorn is a pre-primary school for 75 children between the age of 3 and 6 years old. Your contributions will help provide a safe and creative learning enviroment where children can flourish and develop to their full potential.</p>
+  
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="clearfix w-100 d-md-none pb-3">
+  
+            <!-- Grid column -->
+            <div class="col-md-2 mb-md-0 mb-3">
+  
+              <!-- Links -->
+              <h5 class="text-uppercase">Links</h5>
+  
+              <ul class="list-unstyled">
+                  <li>
+                      <img class="footer-image" src="img/website/nav/Home_House_w.png" alt="">
+                      <a target="_blank" href="http://www.ithembaschool.co.za/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li>
+                      <img class="footer-image" src="img/website/nav/About_i_w.png" alt="">
+                      <a target="_blank" href="http://www.ithembaschool.co.za/aboutus1.aspx">About us</a>
+                    </li>
+                    <li>
+                      <img class="footer-image" src="img/website/nav/pictures_w.png" alt="">
+                      <a target="_blank" href="http://www.ithembaschool.co.za/Gallery1.aspx">Photo gallery</a>
+                    </li>
+                    <li>
+                      <img class="footer-image" src="img/website/nav/Sponsorship_w.png" alt="">
+                  <a target="_blank" href="http://www.ithembaschool.co.za/sponsorship1.aspx">Sponsorship</a>
+                </li>
+                    <li>
+                      <img class="footer-image" src="img/website/nav/Contact_w.png" alt="">
+                  <a target="_blank" href="http://www.ithembaschool.co.za/contactus1.aspx">Contact</a>
+                </li>
+              </ul>
+  
+            </div>
+            <!-- Grid column -->
+        <!-- Grid column -->
+        <div class="col-md-2 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Social</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a target="_blank" href="https://www.facebook.com/iThembaSchoolCapricorn/"> Facebook </a>
+            </li>
+            <li>
+              <a target="_blank" href="https://goo.gl/maps/Ni4eLyFEkULmL6kW7">91 Drury Road Capricorn <br> Muizenberg East 7945 <br> Cape Town, South Africa </a>
+            </li>
+            <li>
+              <a href="mailto:info@ithembaschool.co.za" target="_top">info[at]ithembaschool.co.za</a>
+            </li>
+            <li>
+              <a href="tel:+27(21)7011719">+27 (21) 701 1719</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-2 mb-md-0 mb-3">
+  
+              <!-- Links -->
+              <h5 class="text-uppercase">Site</h5>
+  
+              <ul class="list-unstyled">
+                <li>
+                  <a target="_blank" href="http://www.ithembaschool.co.za/SiteTerms.aspx">Terms</a>
+                </li>
+                <li>
+                  <a target="_blank" href="http://www.ithembaschool.co.za/SitePrivacy.aspx">Privacy</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+  
+      
+  
+          </div>
+          <!-- Grid row -->
+  
+        </div>
+        <!-- Footer Links -->
+  
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a target="_blank" href="http://www.mrmoonhead.com"> mrmoonhead.com</a>
+        </div>
+        <!-- Copyright -->
+  
+      </footer>
+    <!-- footer -->
     
     
   </body>
   
-  <!-- <script src="js/jQuery.js"></script>
+  <script src="js/jQuery.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/responsive.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="js/payfastProcessPayment.js"></script>
+  <!-- <script src="js/payfastProcessPayment.js"></script>
   <script src="js/photoGallery.js"></script>
   <script src='js/githubFileFetch.js'></script> -->
   

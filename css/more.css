@@ -1,0 +1,37 @@
+/* anything more than 1290 */
+@media (min-width: 1290px) {
+  .moveLeft {
+    float: left;
+    padding-top: 135px;
+  }
+
+  .tempPadding {
+    padding-top: 135px;
+  }
+
+  .buyArtBlurb {
+    max-width: 820px;
+  }
+}
+
+/* anything more than 990 */
+@media (min-width: 990px) {
+  
+  .nav-link {
+  float: right;
+  }
+
+  .navbar-nav {
+  position: absolute; 
+  right: 5px;
+  }
+
+  .nav-item{
+  border-left: 1px solid white;
+  padding-left: 15px;
+  }
+  .nav-link {
+  color: white !important;
+  }
+
+}

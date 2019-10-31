@@ -1,7 +1,21 @@
+/* @font-face {
+  font-family: "Bebas Neue"; 
+  src: url("//db.onlinewebfonts.com/t/ba65c7020043d1d406686743e82e2e5d.eot"); 
+  src: url("//db.onlinewebfonts.com/t/ba65c7020043d1d406686743e82e2e5d.eot?#iefix") format("embedded-opentype"), 
+  url("//db.onlinewebfonts.com/t/ba65c7020043d1d406686743e82e2e5d.woff2") format("woff2"), 
+  url("//db.onlinewebfonts.com/t/ba65c7020043d1d406686743e82e2e5d.woff") format("woff"), 
+  url("//db.onlinewebfonts.com/t/ba65c7020043d1d406686743e82e2e5d.ttf") format("truetype"), 
+  url("//db.onlinewebfonts.com/t/ba65c7020043d1d406686743e82e2e5d.svg#Bebas Neue") format("svg"); 
+} */
+
 @font-face {
-  font-family: 'BebasNeue';
-  src: url('fonts/BebasNeue.ttf') format('woff'), /* Pretty Modern Browsers */
-       url('fonts/BebasNeue.woff')  format('truetype'); /* Safari, Android, iOS */
+  font-family: "Bebas Neue"; 
+  src: url("fonts/bebasNeue/bebasNeue1.eot"); 
+  src: url("fonts/bebasNeue/bebasNeue.eot?#iefix") format("embedded-opentype"), 
+  url("fonts/bebasNeue/bebasNeue.woff2") format("woff2"), 
+  url("fonts/bebasNeue/bebasNeue.woff") format("woff"), 
+  url("fonts/bebasNeue/bebasNeue.ttf") format("truetype"), 
+  url("fonts/bebasNeue/bebasNeue.svg#Bebas Neue") format("svg"); 
 }
 
 .navbar{

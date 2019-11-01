@@ -13,3 +13,4 @@ Dates vs classes?
  
  
  git config user.name "ithembaArtists"
+ git config --global user.email "mbye@techsoup.org"

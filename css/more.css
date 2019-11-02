@@ -1,5 +1,10 @@
 /* anything more than 1290 */
 @media (min-width: 1290px) {
+
+  .profileHeader {
+    height: 200px !important;
+}
+
   .moveLeft {
     float: left;
     padding-top: 135px;

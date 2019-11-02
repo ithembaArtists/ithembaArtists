@@ -1,0 +1,118 @@
+@import url(//db.onlinewebfonts.com/c/298785b76367ffb3d3803f03b2292123?family=ChalkDust);
+
+@font-face {font-family: "ChalkDust"; src: url("//db.onlinewebfonts.com/t/298785b76367ffb3d3803f03b2292123.eot"); src: url("//db.onlinewebfonts.com/t/298785b76367ffb3d3803f03b2292123.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/298785b76367ffb3d3803f03b2292123.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/298785b76367ffb3d3803f03b2292123.woff") format("woff"), url("//db.onlinewebfonts.com/t/298785b76367ffb3d3803f03b2292123.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/298785b76367ffb3d3803f03b2292123.svg#ChalkDust") format("svg"); }
+  
+  @font-face {
+    font-family: 'ChalkDust';
+    src: url('../fonts/chalkDust/chalkDust-webfont.eot');
+    src: url('../fonts/chalkDust/chalkDust-webfont.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/chalkDust/chalkDust-webfont.woff') format('woff'), 
+      url('../fonts/chalkDust/chalkDust-webfont.woff2') format('woff2'), 
+      url('../fonts/chalkDust/chalkDust-webfont.ttf') format('truetype'), 
+      url('../fonts/chalkDust/chalkDust-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+  .kidsName{
+  font-family: 'ChalkDust', sans-serif;
+  font-size: 2rem;
+  }
+
+
+/* Header */
+.header {
+  height:auto;
+}
+
+.buyArtTitle {
+  margin-bottom: 20px;
+}
+
+
+.profileBuyArtTitle {
+  padding-top: 85px;
+}
+/* header */
+
+/* PROFILE PIC */
+.profilePic img {
+  width: 100%;
+}
+
+.round{
+  background-color: #5fb0d1;
+  color: #ffffff;
+  display: inline;
+  float: left;
+  margin-right: 0.625em;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  width: 3.5em;
+  height: 3.5em;
+  line-height: 3.5em;
+  border-radius: 6.25em;
+  margin-bottom: 10px;
+} 
+
+.red {
+  background-color: #ff4040 !important;
+}
+
+.blue {
+  background-color: #5fb0d1 !important;
+  border: 0;
+}
+
+.currencyDisclaimer {
+color:  #5eb0d1;
+  font-size: 12px;
+  padding: 0px;
+
+}
+.picture{
+border-bottom: solid 1px #d6d6d6;
+}
+/* profile pic */
+
+/* EXTRAS */
+.extras {
+  font-family: 'ChalkDust', 'Bebas', Fallback, sans-serif;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+.videoPreview{ 
+  width: 100%;
+}
+
+.purchaseVideo {
+  background-color: #ff4040;
+  position: absolute;
+  right: -40px;
+  top: -35px;
+}
+
+.artistVideo, .frames {
+  border-bottom: solid 1px #d6d6d6;
+}
+
+.form-group{
+  width:100%;
+}
+
+.small-price{
+  position: initial !important;
+  font-size: 0.8em;
+  font-weight: 100;
+  margin-top: -10px;
+  margin-left: 8px;
+  }
+
+  .priceLabel {
+    float: left;
+  }
+
+/* extras */

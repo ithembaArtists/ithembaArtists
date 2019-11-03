@@ -4,6 +4,11 @@
   var response = await fetch('https://api.github.com/repos/ithembaArtists/ithembaArtists/contents/img/');
   var data = await response.json();
   var folder = [];
+  
+  console.log('INT GITHUB');
+
+  /******************* 
+   
   for (let file of data) {
     // htmlString += `${file.name}`;
     folder.push(`${file.name}`);
@@ -31,6 +36,8 @@
     }
   };
     console.log('imgs', imgs);
+    
+    **************************/
 
 
 

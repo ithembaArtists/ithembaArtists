@@ -9,6 +9,13 @@
   font-style: normal;
 }
 
+.version{
+  position: absolute;
+  z-index: 10000;
+  top: 0px;
+  right: 0px;
+}
+
 .pointer{
   cursor: pointer;
 }

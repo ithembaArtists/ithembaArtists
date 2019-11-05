@@ -1,6 +1,10 @@
 /*
 * POPULATE
 */
+
+function testMax(string) {
+  console.log('testMax', string);
+}
 var sidebarNames = [];
 var sidebarDates = [];
 var sidebarAge = [];
@@ -19,10 +23,10 @@ function intPopulate(image, index) {
 
   // populates gallery
   $('.thumbnailGallery').append("\
-    <div class='col-sm-4 mt-5 thumbnail blue new'>\
+    <div class='pointer col-sm-4 mt-5 thumbnail blue new'>\
       <p>new</p>\
       <img \
-        src='img/" + image.month + image.year + "/" + image.src + "' \
+        src='img/" + image.month + image.year + "/thumbnail/" + image.src + "' \
         name='" + image.name + "' \
         date='" + image.date + "' \
         size='" + image.size + "'            \
@@ -34,6 +38,7 @@ function intPopulate(image, index) {
     // NAMES
     if( sidebarNames.indexOf(image.name) === -1 ) {
       sidebarNames.push(image.name);
+      $('.namesContainer').append('<dd class="pointer nav-tag" onclick="testMax(' + image.name + ')">' + image.name + '</dd>')
     }
     console.log('sidebarNames',sidebarNames);
     // names

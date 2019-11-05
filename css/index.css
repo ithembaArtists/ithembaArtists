@@ -125,7 +125,12 @@ list-style: none;
 .nav-tag {
 font-size: 0.75em;
 width: 100%;
+color: #007bff;
 }
+
+.nav-tag:hover {
+  text-decoration: underline;
+  }
 
 .nav-tag:before {
 color: #979797;

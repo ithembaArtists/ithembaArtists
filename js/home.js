@@ -2,8 +2,12 @@
 * POPULATE
 */
 
-function testMax(string) {
-  console.log('testMax', string);
+function filterNav(type, search) {
+  searchResults = [];
+  findObjectByKey(images, type, search);
+  console.log(searchResults);
+  $('.thumbnailGallery').html("");
+  searchResults.forEach(intPopulate);
 }
 var sidebarNames = [];
 var sidebarDates = [];
@@ -38,33 +42,37 @@ function intPopulate(image, index) {
     // NAMES
     if( sidebarNames.indexOf(image.name) === -1 ) {
       sidebarNames.push(image.name);
-      $('.namesContainer').append('<dd class="pointer nav-tag" onclick="testMax(' + image.name + ')">' + image.name + '</dd>')
+      $('.namesSidebar').append('<dd class="pointer nav-tag" onclick="filterNav(\'name\', \'' + image.name + '\')">' + image.name + '</dd>');      
+      $('.namesMobile').append('<li onclick="mobileSearch(\'name\', \'' + image.name + '\')"><p>' + image.name + '</p></li>');
     }
-    console.log('sidebarNames',sidebarNames);
     // names
     // OCCASSION
     if( sidebarOccassions.indexOf(image.occassion) === -1 ) {
+      $('.occassionsSidebar').append('<dd class="pointer nav-tag" onclick="filterNav(\'occassion\', \'' + image.occassion + '\')">' + image.occassion + '</dd>')
+      $('.occassionsMobile').append('<li onclick="mobileSearch(\'occassion\', \'' + image.occassion + '\')"><p>' + image.occassion + '</p></li>');
       sidebarOccassions.push(image.occassion);
     }
-    console.log('sidebarOccassions',sidebarOccassions);
     // occassion
     // SIZE
     if( sidebarSizes.indexOf(image.size) === -1 ) {
+      $('.sizesSidebar').append('<dd class="pointer nav-tag" onclick="filterNav(\'size\', \'' + image.size + '\')">' + image.size + '</dd>')
+      $('.sizesMobile').append('<li onclick="mobileSearch(\'sizes\', \'' + image.sizes + '\')"><p>' + image.sizes + '</p></li>');
       sidebarSizes.push(image.size);
     }
-    console.log('sidebarSizes',sidebarSizes);
     // size
     // DATE
     if( sidebarDates.indexOf(image.date) === -1 ) {
+      $('.datesSidebar').append('<dd class="pointer nav-tag" onclick="filterNav(\'date\', \'' + image.date + '\')">' + image.date + '</dd>')
+      $('.datesMobile').append('<li onclick="mobileSearch(\'date\', \'' + image.date + '\')"><p>' + image.date + '</p></li>');
       sidebarDates.push(image.date);
     }
-    console.log('sidebarDates',sidebarDates);
     // date
     // AGE
     if( sidebarAge.indexOf(image.age) === -1 ) {
+      $('.agesSidebar').append('<dd class="pointer nav-tag" onclick="filterNav(\'age\', \'' + image.age + '\')">' + image.age + '</dd>')
+      $('.agesMobile').append('<li onclick="mobileSearch(\'age\', \'' + image.age + '\')"><p>' + image.age + '</p></li>');
       sidebarAge.push(image.age);
     }
-    console.log('sidebarAge',sidebarAge);
     // age
  
 }
@@ -75,14 +83,46 @@ populate();
 /*
 * SEARCH
 */
+
+// mobile search
+function mobileSearch(type, val){
+  toogleNav();
+  filterNav(type, val);
+}
+
+// key bind
+$( ".searchInput" ).keyup(function() {
+  $('.thumbnailGallery').html("");
+  var searchVal = $('.searchInput').val();
+  search(searchVal);
+  searchResults.forEach(intPopulate);
+});
+
+
 function findObjectByKey(array, key, value) {
   for (var i = 0; i < array.length; i++) {
-      if (array[i][key].includes(value)) {
+      if (array[i][key].toLowerCase().includes(value.toLowerCase())) {
         searchResults.push(array[i]);
       }
   }
   return null;
 }
+
+
+function getUnique(arr, comp) {
+
+  const unique = arr
+       .map(e => e[comp])
+
+     // store the keys of the unique objects
+    .map((e, i, final) => final.indexOf(e) === i && i)
+
+    // eliminate the dead keys & store unique objects
+    .filter(e => arr[e]).map(e => arr[e]);
+
+   return unique;
+}
+
 
 var searchResults = [];
 function search(val){
@@ -91,10 +131,8 @@ function search(val){
   findObjectByKey(images, 'size', val);
   findObjectByKey(images, 'name', val);
   findObjectByKey(images, 'year', val);
-  console.log('searchResults', searchResults);
+  searchResults = getUnique(searchResults,'src');
 }
-
-search('September 2019');
 // search
 
 /* 

@@ -14,7 +14,7 @@
   
   <body>
 
-    <p class="version">v. 0.0.2</p>
+    <p class="version">v. 0.0.4</p>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -26,24 +26,24 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <img class='nav-image' src="img/website/nav/Home_House_w.png" alt="">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a target="_blank" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <img class='nav-image' src="img/website/nav/About_i_w.png" alt="">
-                <a class="nav-link" href="#">About us</a>
+                <a target="_blank" href="http://www.ithembaschool.co.za/aboutus1.aspx" class="nav-link" href="#">About us</a>
               </li>
               
               <li class="nav-item">
                   <img class='nav-image' src="img/website/nav/pictures_w.png" alt="">
-                  <a class="nav-link" href="#">Photo gallery</a>
+                  <a target="_blank" href="http://www.ithembaschool.co.za/Gallery1.aspx" class="nav-link" href="#">Photo gallery</a>
                 </li>
                 <li class="nav-item">
                     <img class='nav-image' src="img/website/nav/Sponsorship_w.png" alt="">
-                    <a class="nav-link" href="#">Sponsership</a>
+                    <a target="_blank" href="http://www.ithembaschool.co.za/sponsorship1.aspx" class="nav-link" href="#">Sponsership</a>
                   </li>
                   <li class="nav-item">
                       <img class='nav-image' src="img/website/nav/Contact_w.png" alt="">
-              <a class="nav-link" href="#">Contact</a>
+              <a target="_blank" href="http://www.ithembaschool.co.za/contactus1.aspx" class="nav-link" href="#">Contact</a>
             </li>
             
           </ul>
@@ -70,57 +70,49 @@
       <!-- SEARCH & FILTERS TABLES-->
       <p class='donationLarge m-0'>Just want to make a donation <a href=""><u>please click here.</u></a></p> 
       <div class='donationFilterContainer'>
-      <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="bg-info btn" id="basic-addon1">
-              <img src="img/website/magnifying-glass.png">
-            </span>
-          </div>
-          <input type="text" class="form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
-          <div hidden="" class="input-group-append">
-            <span class="btn btn-info">search</span>
-          </div>
-        </div>
-     
+
+        <!-- FILTERS -->
         <div class='row'>
         <div class='col-sm-3'>
         <p><b> NAME: </b></p>
         <ul class='pl-3'>
-        <li><p> chris</p></li>
-        <li><p> evan</p></li>
-        <li><p> luke</p></li>
-        <li><p>  micheline</p></li>
-        <li><p> ondela</p></li>
-        <li> <p> ronell</p></li>
-        <li> <p> konaldo</p></li>
+          <div class='pointer namesMobile'></div>
         </ul>
         </div>
         <div class='col-sm-3'>
           <p><b> OCCASION:</b></p>
           <ul class='pl-3'>
-            <li><p>Christmas</p></li>
-            <li><p>Birthday</p></li>
-          </ul>
-        </div>
-        <div class='col-sm-3'>
+              <div class='pointer occassionsMobile'></div>
+            </ul>
+          </div>
+          <div class='col-sm-3'>
             <p><b> DATE:</b></p>
             <ul class='pl-3'>
-            <li><p>September 2019</p></li>
-            <li><p>August 2019</p></li>
-            <li><p>July 2019</p></li>
-          </ul>
-        </div>
-        <div class='col-sm-3'>
-          <p><b> CHILD'S AGE:</b></p>
-          <ul class='pl-3'>
-            <li><p>3</p></li>
-            <li><p>3</p></li>
-            <li><p>4</p></li>
-            <li><p>5</p></li>
-            <li><p>6</p></li>
+              <div class='pointer datesMobile'></div>            
+            </ul>
+          </div>
+          <div class='col-sm-3'>
+            <p><b> CHILD'S AGE:</b></p>
+            <ul class='pl-3'>
+              <div class='pointer agesMobile'></div>            
           </ul>
         </div>
       </div>
+      <!-- filters -->
+
+      <!-- SEARCH -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend" onclick='toogleNav()'>
+          <span class="bg-info btn" id="basic-addon1">
+            <img src="img/website/magnifying-glass.png">
+          </span>
+        </div>
+        <input type="text" class="searchInput form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
+        <div hidden="" class="input-group-append">
+          <span class="btn btn-info">search</span>
+        </div>
+      </div>
+      <!-- search-->
     
       <div class='text-center'>
         <p>Or just want to make a donation? 
@@ -148,7 +140,7 @@
             <img src="img/website/magnifying-glass.png">
           </span>
         </div>
-        <input type="text" class="form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="searchInput form-control" placeholder="enter search" aria-label="Username" aria-describedby="basic-addon1">
         <div hidden class="input-group-append">
           <span class="btn btn-info">search</span>
         </div>
@@ -157,32 +149,24 @@
 
   <dl>
     <dt class="nav-title customfont">Name:</dt>
-    <div class='namesContainer'></div>
+    <div class='namesSidebar'></div>
   </dl>
 
   <dl>
     <dt class="nav-title customfont">Occasion:</dt>
-    <dd class="nav-tag"><a href="/tagged/Red">Christmas</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Orange">Birthday</a></dd>
+    <div class='occassionsSidebar'></div>
   </dl>
   <dl>
     <dt class="nav-title customfont">Painting size:</dt>
-    <dd class="nav-tag"><a href="/tagged/Red">Large</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Orange">Medium</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Orange">Card</a></dd>
+    <div class='sizesSidebar'></div>
   </dl>
   <dl>
     <dt class="nav-title customfont">Date:</dt>
-    <dd class="nav-tag"><a href="/tagged/Red">September 2019</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Orange">August 2019</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Orange">July 2019</a></dd>
+    <div class='datesSidebar'></div>
   </dl>
   <dl>
     <dt class="nav-title customfont">Child's Age:</dt>
-    <dd class="nav-tag"><a href="/tagged/Red">3</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Orange">4</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Yellow">5</a></dd>
-    <dd class="nav-tag"><a href="/tagged/Green">6</a></dd>
+    <div class='agesSidebar'></div>
   </dl>
   </aside>
   <!-- nav -->
@@ -195,86 +179,7 @@
 
   <!-- THUMBNAIL -->
     <div class='col-lg-9'>
-      <div class='thumbnailGallery row mr-5 mb-5'>
-
-
-        <!-- <div class='col-sm-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img 
-            src="img/sept2019/1.png" 
-            name="chris"
-            date="September 2019"
-            size="card"            
-            alt="chris's art"
-          >
-        </div>
-        
-        <div class='col-sm-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img
-          src="img/sept2019/2.png" 
-          name="evan"
-          date="September 2019"
-          size="card"            
-          alt="evan's art"
-          >
-        </div>
-
-        <div class='col-sm-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img 
-            src="img/sept2019/3.png" 
-            name="luke"
-            date="September 2019"
-            size="card"            
-            alt="luke's art"
-          >
-        </div>
-      
-        <div class='col-sm-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img        
-          src="img/sept2019/4.png" 
-          name="micheline"
-          date="September 2019"
-          size="large"            
-          alt="micheline's art">
-        </div>
-
-        <div class='col-sm-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img        
-          src="img/sept2019/5.png" 
-          name="ondela"
-          date="September 2019"
-          size="large"            
-          alt="ondela's art">
-        </div>
-
-        <div class='col-sm-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img        
-          src="img/sept2019/6.png" 
-          name="ronell"
-          date="September 2019"
-          size="small"            
-          alt="ronell's art">
-        </div>
-
-        <div class='col-sm-4 mt-5 thumbnail blue new'>
-          <p>new</p>
-          <img        
-          src="img/sept2019/7.png" 
-          name="konaldo"
-          date="September 2019"
-          size="small"            
-          alt="konaldo's art">
-        </div>
- -->
-
-
-      
-      </div>
+      <div class='thumbnailGallery row mr-5 mb-5'></div>
     </div>
   </div>
     <!-- thumbnail -->
@@ -292,7 +197,7 @@
         <div class="col-md-6 mt-md-0 mt-3">
 
           <!-- Content -->
-          <h5 class="text-uppercase">BUY ART & SPONSOR A CHILD'S EDUCATION 2</h5>
+          <h5 class="text-uppercase">BUY ART & SPONSOR A CHILD'S EDUCATION</h5>
           <p>iThemba School Capricorn is a pre-primary school for 75 children between the age of 3 and 6 years old. Your contributions will help provide a safe and creative learning enviroment where children can flourish and develop to their full potential.</p>
 
         </div>

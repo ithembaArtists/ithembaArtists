@@ -27,16 +27,18 @@ function intPopulate(image, index) {
 
   // populates gallery
   $('.thumbnailGallery').append("\
-    <div class='pointer col-sm-4 mt-5 thumbnail blue new'>\
-      <p>new</p>\
-      <img \
-        src='img/" + image.month + image.year + "/thumbnail/" + image.src + "' \
-        name='" + image.name + "' \
-        date='" + image.date + "' \
-        size='" + image.size + "'            \
-        alt='" + image.name + "'s art' \
-      > \
-    </div>");
+  <div class='col-sm-4 mt-5 thumbnail blue new'>\
+  <a href='product.html#" + image.src +  "'>\
+        <p>new</p>\
+        <img \
+          src='img/" + image.month + image.year + "/thumbnail/" + image.src + "' \
+          name='" + image.name + "' \
+          date='" + image.date + "' \
+          size='" + image.size + "'            \
+          alt='" + image.name + "'s art' \
+        ></a> \
+      </div>\
+      ");
 
     // populate sidebar
     // NAMES
@@ -91,9 +93,16 @@ function mobileSearch(type, val){
 }
 
 // key bind
-$( ".searchInput" ).keyup(function() {
+$( ".searchNav" ).keyup(function() {
   $('.thumbnailGallery').html("");
-  var searchVal = $('.searchInput').val();
+  var searchVal = $('.searchNav').val();
+  search(searchVal);
+  searchResults.forEach(intPopulate);
+});
+
+$( ".searchMobile" ).keyup(function() {
+  $('.thumbnailGallery').html("");
+  var searchVal = $('.searchMobile').val();
   search(searchVal);
   searchResults.forEach(intPopulate);
 });

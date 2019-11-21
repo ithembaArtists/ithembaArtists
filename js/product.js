@@ -14,7 +14,6 @@ images.forEach(function(c, index){
 
 // DISPLAY IMAGE OBJ
 function displayImage(obj){
-  console.log(obj)
   $('.kidsName').html(obj.name);
   $('.kidsDescription').html(obj.description);
   $('.kidsArt').attr('src', 'img/' + obj.month + obj.year + "/preview/" + obj.src);

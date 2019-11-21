@@ -61,15 +61,16 @@
 
       <div class='alert alert-info'>
           <!-- SEARCH & FILTERS DROP-DOWN-->
-          <div class='text-center searchFilters' onclick='toogleNav()'>
+          <!-- <div class='text-center searchFilters' onclick='toogleNav()'>
             <p class='m-0 mr-2'><a href=''><u>search</u></a> & <a href=''><u>filters</u></a></p> 
             <span class='h3 p-0'> ⤓ </span>
-          </div>
+          </div> -->
           <!-- dropdown -->
     
           <!-- SEARCH & FILTERS TABLES-->
-          <p class='donationLarge m-0'>Just want to make a donation <a href=""><u>please click here.</u></a></p> 
-          <div class='donationFilterContainer'>
+          <!-- below add class: donationLarge-->
+           <p class='m-0'>Just want to make a donation <a href=""><u>please click here.</u></a></p> 
+          <!--<div class='donationFilterContainer'>
           <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="bg-info btn" id="basic-addon1">
@@ -128,16 +129,16 @@
             <div class='pointer' onclick='toogleNav()'>
               <span class='h3 p-0'> ⤒ </span>
               <p class='m-0 mr-2'>hide search & filters</p> 
-            </div>
-    
-          </div>
+            </div>    
+          </div> -->
             <!-- tables -->
         </div>
       </div>
     <!-- cover photo -->
     
     <!-- NAV -->
-  <aside id="site-sidebar" class="l-sidebar l-block d-none d-xl-block"><!-- BEGIN site nav --><nav id="site-nav" class="l-block hidden-phone">
+  <!-- <aside id="site-sidebar" class="l-sidebar l-block d-none d-xl-block">
+    <nav id="site-nav" class="l-block hidden-phone">
     <dl class="nav nav-tags">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -187,7 +188,7 @@
   <dd class="nav-tag"><a href="/tagged/Yellow">5</a></dd>
   <dd class="nav-tag"><a href="/tagged/Green">6</a></dd>
 </dl>
-  </aside>
+  </aside> -->
   <!-- nav -->
 
   <!-- profilePic -->
@@ -205,30 +206,59 @@
       <div class='row'>
         <div class='col-md-4'>
           <blockquote>            
-            <p class="round red">€18</p>
-            <p class="d-md-block d-lg-none round blue">BUY</p>
+            <p class="round red priceSize">
+              <span class='currencySymbol'></span>
+              <span class='currencyValue'></span>
+            </p>
+            <div class='payfast'>
+                <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14342506&amp;item_name=Test&amp;item_description=Test+Description&amp;amount=10.00&amp;return_url=https%3A%2F%2Fwww.google.com%2F&amp;cancel_url=https%3A%2F%2Fwww.google.com%2F">                
+                  <p class="d-md-block d-lg-none round blue">BUY</p>
+                </a>
+            </div>
+            <div class='paypal'>
+              <p class="d-md-block d-lg-none round blue">BUY</p>
+              NOT AFRICA
+              <div id='paypal-button-container'></div>
+            </div>
           </blockquote>
         </div>
-        <div class='col-6 d-none d-lg-block'>
-          <p class="round blue">BUY</p>
-          <div class="mt-3 dropdown">
-            <button hidden class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Choose country
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>                  
+        <div class='paypal'>
+          <div class='col-6 d-none d-lg-block'>
+
+        </div>
+        <div class='payfast'>
+          <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14342506&amp;item_name=Test&amp;item_description=Test+Description&amp;amount=10.00&amp;return_url=https%3A%2F%2Fwww.google.com%2F&amp;cancel_url=https%3A%2F%2Fwww.google.com%2F">                
+            <p class="round blue">BUY</p>    
+          </a>                      
+        </div>
+        </div>              
+        <div class='payfast col-6 d-none d-lg-block'>
+          <p class="round blue">BUY</p>                          
         </div>              
       </div> <!-- row -->
 
-      <p class='currencyDisclaimer'>
+      <!-- CURRENCY DROPDOWN -->
+      <p class='currencyDisclaimer' onclick="toggleDropdown()">
         <u>
           Price is displayed in the wrong currency?
         </u>
       </p>
+      <div class='currencyDropdown' style='display: none'> 
+        <select id='chooseCurrency' class='my-3' onchange='currencySelected()'>
+          <option>Please select a currency</option>
+          <option value="USD">US dollar</option>
+          <option value="EUR">Euro</option>
+          <option value="ZAR">South African Rand</option>
+          <option value="JPY">Japanese yen</option>
+          <option value="GBP">Pound sterling</option>
+          <option value="AUD">Australian dollar</option>
+          <option value="CAD">Canadian dollar</option>
+          <option value="CHF">Swiss franc</option>
+          <option value="CNH">Chinese renminbi</option>
+          <option value="SEK">Swedish krona</option>
+          <option value="NZD">New Zealand dollar</option>
+        </select>
+      </div><!-- currency dropdown -->
       <div class="alert alert-info" role="alert">                
         <b>  Just to clarify, </b><br>
         you will be sent the original drawing and your money will sponsor the artist and their classmates education. 
@@ -437,6 +467,8 @@
   <script src="js/bootstrap.js"></script>
   <script src="js/images.js"></script>
   <script src="js/product.js"></script>
+  <script src="js/currencyCodes.js"></script>
+  <script src="js/currency.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <script src="js/payfastProcessPayment.js"></script>

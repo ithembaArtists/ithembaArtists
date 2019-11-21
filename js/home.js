@@ -76,7 +76,6 @@ function intPopulate(image, index) {
       sidebarAge.push(image.age);
     }
     // age
- 
 }
 
 populate();

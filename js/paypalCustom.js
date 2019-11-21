@@ -2,9 +2,10 @@ paypal.Buttons({
   createOrder: function(data, actions) {
     return actions.order.create({
       purchase_units: [{
-        description: itemName,
+        description: 'hello world',
         amount: {
-          value: '0.01'
+          // currency_code: 'GBP',
+          value: '0.05'
         }
 
 

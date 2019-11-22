@@ -1,3 +1,7 @@
+// test currency add
+$('.currencyScript').attr('src','https://www.paypal.com/sdk/js?client-id=AUVR9O8iFRN2USlVCe2xjQ95kNg0OLuCEm4pJZ4t6SiE-3Oe4jAA9fFDnIOd_-VqL2C16CYeR-9w7yw7&currency=GBP');
+  setTimeout(function(){
+
 paypal.Buttons({
   createOrder: function(data, actions) {
     return actions.order.create({
@@ -20,3 +24,4 @@ paypal.Buttons({
     });
   }
 }).render('#paypal-button-container');
+}, 3000);

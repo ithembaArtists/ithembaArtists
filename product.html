@@ -210,11 +210,11 @@
               <span class='currencySymbol'></span>
               <span class='currencyValue'></span>
             </p>
-            <p class="d-md-block d-lg-none round blue">BUY</p>           
+            <p class="d-md-block d-lg-none round blue" data-toggle="modal" data-target="#checkoutModal">BUY</p>           
           </blockquote>
         </div>
           <div class='col-6 d-none d-lg-block'>
-            <p class="round blue">BUY</p>    
+            <p class="round blue" data-toggle="modal" data-target="#checkoutModal">BUY</p>    
         </div>              
       </div> <!-- row -->
 
@@ -262,7 +262,7 @@
         <button class='blue btn btn-lg btn-info'> + Add Video Message </button>
       </div>
       <div class='col-lg-6 pt-2'>
-          <p class="round blue purchaseVideo">€11</p>
+          <p class="round blue purchaseVideo"></p>
         <img class='videoPreview' src="img/website/extras/videoPreview.png" alt="">
       </div>
     </section>
@@ -297,26 +297,26 @@
         <div class='form-group form-check'>
           <input selected='true' checked type="checkbox" class='form-check-input' id='exampleCheck'>
           <p class='priceLabel form-check-label' for='exampleCheck1'>Frame with mount</p>
-          <p class='d-block d-sm-none ml-3'>&nbsp;- £18</p>
-          <p class="round red purchaseVideo small-price d-none d-sm-block">€18</p>
+          <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='frameMount'>£18</span></p>
+          <p class="round red frameMount small-price d-none d-sm-block">€18</p>
         </div>
         <div class='form-group form-check'>
           <input type="checkbox" class='form-check-input' id='exampleCheck'>
           <p class='priceLabel form-check-p' for='exampleCheck1'>Frame without mount </p>
-          <p class='d-block d-sm-none ml-3'>&nbsp;- £9</p>
-          <p class="round red purchaseVideo small-price d-none d-sm-block">€9</p>
+          <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='frameWithoutMount'></span></p>
+          <p class="round red frameWithoutMount small-price d-none d-sm-block"></p>
         </div>
         <div class='form-group form-check'>
           <input type="checkbox" class='form-check-input' id='exampleCheck'>
           <p class='priceLabel form-check-label' for='exampleCheck1'>Gift wrap </p>
-          <p class='d-block d-sm-none ml-3'>&nbsp;- £7</p>
-          <p class="round red purchaseVideo small-price d-none d-sm-block">€7</p>
+          <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='giftWrap'></span></p>
+          <p class="round red giftWrap small-price d-none d-sm-block"></p>
         </div>
         <div class='form-group form-check'>
           <input type="checkbox" class='form-check-input' id='exampleCheck'>
           <p class='priceLabel form-check-label' for='exampleCheck1'>Written message from child </p>
-          <p class='d-block d-sm-none ml-3'>&nbsp;- £8</p>
-          <p class="round red purchaseVideo small-price d-none d-sm-block">€8</p>
+          <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='messageChild'></span></p>
+          <p class="round red messageChild small-price d-none d-sm-block"></span></p>
         </div>
         <div class='form-group form-check'>
           <input type="checkbox" class='form-check-input' id='exampleCheck'>
@@ -444,18 +444,41 @@
   <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="checkoutModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
         <div class="modal-body">
-          <div id='paypal-button-container'></div>
+          <!-- NO EXTRAS-->
+          <div class='noExtras text-center'>
+            <img class='w-100' src="img/website/extras.png" alt="">
+            <h3>Before you purchase...</h3>
+            <p>Would you like to add any extras? <br> A message from the artist? <br>Or for your photo to be framed / gift wrapped?</p>
+            <div class='col-8 offset-2'>
+              <button class='text-center btn btn-success' onclick='seeOptions()'> Sure let me see the options!</button>
+            </div>
+          </div>
+          <!-- no extras -->
+
+          
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <div class='w-100 text-center'>
+            <p class='noExtras'><b>Not today,</b> I'm fine with just the picture (<span class='priceSize'></span>).</p>
+            <div class='extrasAdded'>
+              EXTRAS ADDED
+            </div>
+          <!-- PAYPAL -->
+          <div class='paypal'>
+              <p>Please choose to pay with paypal or card below:</p>
+              <div id='paypal-button-container'></div>
+          </div>
+          <!-- paypal -->
+          <!-- PAYFAST -->
+          <div class='payfast'>
+            <p>Please click button below to finish payment:</p>
+          <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14342506&amp;item_name=Test&amp;item_description=Test+Description&amp;amount=10.00&amp;return_url=https%3A%2F%2Fwww.google.com%2F&amp;cancel_url=https%3A%2F%2Fwww.google.com%2F"> 
+            <button class='btn btn-info'>Pay with payfast</button> 
+              </a>
+            </div>
+          <!-- payfast -->
+        </div>
         </div>
       </div>
     </div>
@@ -472,6 +495,7 @@
   <script src="js/product.js"></script>
   <script src="js/currencyCodes.js"></script>
   <script src="js/currency.js"></script>
+  <script src="js/modal.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <script class='currencyScript' src></script>
@@ -488,7 +512,7 @@ setTimeout(function(){
   // paypal script
   my_awesome_script.setAttribute('src','https://ithembaartists.github.io/ithembaArtists/js/paypalCustom.js');
   document.head.appendChild(my_awesome_script);
-}, 5000);
+}, 2000);
 
 
   </script>

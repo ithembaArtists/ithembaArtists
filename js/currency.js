@@ -1,9 +1,16 @@
-getCurrency(18, '.priceSize');
-getCurrency(11, '.purchaseVideo');
-getCurrency(18, '.frameMount');
-getCurrency(14, '.frameWithoutMount');
-getCurrency(7, '.giftWrap');
-getCurrency(8, '.messageChild');
+getCurrency(products.largeImage.price, products.largeImage.class);
+
+extras.forEach(function(c){
+  console.log(c);
+  getCurrency(c.price, c.class);
+})
+
+// getCurrency(18, '.priceSize');
+// getCurrency(11, '.videoPrice');
+// getCurrency(18, '.frameMount');
+// getCurrency(14, '.frameWithoutMount');
+// getCurrency(7, '.giftWrap');
+// getCurrency(8, '.messageChild');
 function getCurrency(input, classname){
   $.get("https://ipinfo.io", function(response) {
     // console.log(response.city, response.country);
@@ -56,8 +63,19 @@ function getCurrency(input, classname){
         }
       }
       // adjust price size font
+    }).fail(function() {
+      console.log('Currency exchange server is down, only using SA prices.'); // or whatever
+      $('.currencyIssue').show();
+      networkError = true;
+      $('.priceSize').html('RPRICE')
+      $('.videoPrice').html('RPRICE')
+      $('.frameMount').html('RPRICE')
+      $('.frameWithoutMount').html('RPRICE')
+      $('.giftWrap').html('RPRICE')
+      $('.messageChild').html('RPRICE')
     });
   }
+
 }
 
 /*

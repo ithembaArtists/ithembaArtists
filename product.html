@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/less.css">
     <link rel="stylesheet" href="css/more.css">
@@ -19,6 +20,12 @@
   </head>
   
   <body>
+
+    <!-- CURRENCY ISSUE -->
+    <div class='currencyIssue w-100 alert alert-danger text-center'>
+      Something's up with the currency server, all prices are in ZAR Rand until it's resolved.
+    </div>
+    <!-- currency issue -->
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <img src="img/website/nav/banner.png" class="ithembaBanner">
@@ -192,6 +199,24 @@
   <!-- nav -->
 
   <!-- profilePic -->
+  
+<!-- CHECKOUT -->
+<div class='checkout'> 
+  <p>Currently in cart:</p>
+    <p>Product 1 (£PRICE) 
+        <button class="px-1 pt-0 btn btn-danger">
+            <img width="20px" src="img/website/product/delete.png" alt="delete">
+          </button>
+    </p>
+    <p>Product 2 (£PRICE)</p>
+    <p>Product 3 (£PRICE)</p>
+  <button class='btn btn-success' onclick="checkout()">Checkout 
+    <img class='mb-1' width="20px" src="img/website/product/shopping-cart.png" alt="">
+  </button>
+</div>
+<!-- checkout -->
+
+
 <!-- PICTURE -->
   <div class='picture row m-5 pb-5'>
     <div class='col-md-8 profilePic'>
@@ -254,15 +279,15 @@
       <div class='col-lg-6'>
       <h2 class='extras'>Get a message from the artist!</h2>
         <p>
-          For an additional €11, the CHILD'S NAME will send a thank you message.
+          For an additional <span class='videoPrice'></span>, <span class='kidsName'></span> will send a thank you message.
           Buying for a friend? Enter their name in checkout and we will email a personalized video to them. <br><br> 
           Your investment is making a huge impact on these kids lives so we ensure every video is personal and meaningful.        
           The video is yours so you are free to download, watch and share this video as much as you want.       
         </p>
-        <button class='blue btn btn-lg btn-info'> + Add Video Message </button>
+        <button class='blue btn btn-lg btn-info' onclick='addVideo(price)'> + Add Video Message </button>
       </div>
       <div class='col-lg-6 pt-2'>
-          <p class="round blue purchaseVideo"></p>
+          <p class="round blue purchaseVideo videoPrice"></p>
         <img class='videoPreview' src="img/website/extras/videoPreview.png" alt="">
       </div>
     </section>
@@ -490,7 +515,9 @@
   <script src="js/jQuery.js"></script>
   <script src="js/index.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/checkout.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/products.js"></script>
   <script src="js/images.js"></script>
   <script src="js/product.js"></script>
   <script src="js/currencyCodes.js"></script>

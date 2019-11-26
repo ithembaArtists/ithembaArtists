@@ -10,3 +10,32 @@
   background-size: cover;
 
 }
+
+/*
+* CHECKOUT
+*/
+.checkout {
+  display: none;
+  position: fixed;
+    z-index: 200;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+    background: black;
+    opacity: .8;
+    padding: 20px;
+}
+
+.checkout ul {
+  list-style: none;
+}
+
+.currencyIssue {
+  display: none;
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+}
+/*
+* checkout
+*/

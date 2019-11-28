@@ -1,6 +1,19 @@
 var cart = {};
 var total;
 
+function goToPayfastCheckout(){
+  
+  $('.payfast_click_me').click();
+  // if (Object.prototype.hasOwnProperty.call(cart, prop)) {
+  //   // do stuff
+  //   total = cart[prop] + total;
+  //   console.log('prop',cart[prop]);
+  // }
+  // var item = "Hello world";
+  // window.location = "https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14342506&amp;item_name=" + item + "&amp;item_description=Test+Description&amp;amount=10.00&amp;return_url=https%3A%2F%2Fwww.google.com%2F&amp;cancel_url=https%3A%2F%2Fwww.google.com%2F";
+  // str.link("https://www.w3schools.com");
+}
+
 function addToCart(type){
   console.log('products[type]', products[type]);
   if(!cart[type] || cart[type] === 0){
@@ -25,13 +38,7 @@ function calculateTotal(){
   // EMPTY CART
   if(total === 0){
     $('.checkout').fadeOut(500);
-    // if cart empty say so.
-    $('.emptyCart').show();
-    $('.checkoutModal').hide();
-    $('.checkoutBtns').hide();
-  } else {
-    $('.emptyCart').hide();
-    $('.checkoutBtns').show();
+    $('#checkoutModal').modal('hide');
   }
 
 }
@@ -43,6 +50,9 @@ function addVideo(){
 }
 
 function buyingPainting() { 
+  // $('.payfast_anchor').attr('href','https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14342506&amp;item_name=Test&amp;item_description=Test+Description&amp;amount=10.00&amp;return_url=https%3A%2F%2Fwww.google.com%2F&amp;cancel_url=https%3A%2F%2Fwww.google.com%2F');
+  $('.itemName').attr('value','HELLO WORLD');
+  $('.itemPrice').attr('value','400');
   $('.checkoutModal').show();
   $('.cartOverlay').fadeOut(500);
   // console.log('FIND PAINTING'); // NEED TO DO

@@ -1,56 +1,3 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>
-  PayFast Test Payment
-</title>
-</head>
-<body>
-
-<input type="hidden" name="payfast_url" id="payfast_url" value="https://www.payfast.co.za/eng/process">
-<input type="hidden" name="return_url" id="return_url" value="https://ithembaartists.github.io/ithembaArtists/payfast/payment_finished.html">
-<input type="hidden" name="cancel_url" id="cancel_url" value="https://ithembaartists.github.io/ithembaArtists/payfast/payment_cancelled.html">
-<input type="hidden" name="notify_url" id="notify_url" value="https://ithembaartists.github.io/ithembaArtists/payfast/payment_notify.html">
-<input type="hidden" name="item_name" id="item_name" value="DevEnterprise Test Product">
-<input type="hidden" name="merchant_id" id="merchant_id" value="10000100">
-<input type="hidden" name="merchant_key" id="merchant_key" value="46f0cd694581a">
-<input type="hidden" name="item_description" id="item_description" value="">
-<input type="hidden" name="email_confirmation" id="email_confirmation" value="1">
-<input type="hidden" name="confirmation_address" id="confirmation_address" value="">
-<table>
-<tr hidden>
-<td>Invoice Number: </td><td><input type="text" name="payment_id" id="payment_id" value="KIDSNAME_CART_6.png" /></td>
-</tr>
-<tr hidden>
-<td>Amount (Rand): </td><td><input type="text" name="amount" id="amount" value="10" /></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>Your First Name: </td><td><input type="text" name="name_first" id="name_first" placeholder='First Name' /></td>
-</tr>
-<tr>
-<td>Your Last Name: </td><td><input type="text" name="name_last" id="name_last" placeholder='Last Name' /></td>
-</tr>
-<tr>
-<td>Your Email: </td><td><input type="text" name="email_address" id="email_address" placeholder="email@email.co.za" /></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><img onclick="quickPostPaymentToPayFast(document.getElementById('payfast_url').value);" src="https://www.payfast.co.za/images/buttons/paynow_basic_logo.gif" align="bottom" vspace="3" width="95" height="57" alt="Pay Now" title="Pay Now with PayFast" /></td>
-</tr>
-</table>
-</p>
-</div>
-
-<script>
-
 var createElement=(function(){if(false){var attrTranslations={"class":"className","for":"htmlFor"};var setAttribute=function(element,attr,value){if(attrTranslations.hasOwnProperty(attr)){element[attrTranslations[attr]]=value;}
 else if(attr=="style"){element.style.cssText=value;}
 else{element.setAttribute(attr,value);}};return function(tagName,attributes){attributes=attributes||{};if(attributes.hasOwnProperty("name")||attributes.hasOwnProperty("checked")||attributes.hasOwnProperty("multiple")){var tagParts=["<"+tagName];if(attributes.hasOwnProperty("name")){tagParts[tagParts.length]=' name="'+attributes.name+'"';delete attributes.name;}
@@ -71,8 +18,3 @@ function validatePayFastResponse(payFastUrl,merchantId){if(merchantId!=getParame
 function quickPostPaymentToPayFast(payFastUrl){postPaymentToPayFast(payFastUrl,document.getElementById('merchant_id').value,document.getElementById('merchant_key').value,document.getElementById('return_url').value,document.getElementById('cancel_url').value,document.getElementById('notify_url').value,document.getElementById('name_first').value,document.getElementById('name_last').value,document.getElementById('email_address').value,document.getElementById('payment_id').value,document.getElementById('amount').value,document.getElementById('item_name').value,document.getElementById('item_description').value,document.getElementById('email_confirmation').value,document.getElementById('confirmation_address').value);}
 function postPaymentToPayFast(payFastUrl,merchantId,merchantKey,returnUrl,cancelUrl,notifyUrl,nameFirst,nameLast,emailAddress,paymentId,amount,itemName,itemDescription,emailConfirmation,confirmationAddress){if(merchantId=='10000100'){alert('Use the password \'clientpass\' to login and make the test purchase.');}
 postToURL(payFastUrl,{'merchant_id':'14342506','merchant_key':'2hl3hyiaxsoz2','return_url':returnUrl,'cancel_url':cancelUrl,'notify_url':notifyUrl,'name_first':nameFirst,'name_last':nameLast,'email_address':emailAddress,'m_payment_id':paymentId,'amount':amount,'item_name':itemName,'item_description':itemDescription,'email_confirmation':emailConfirmation,'confirmation_address':confirmationAddress});}
-
-</script>
-
-</body>
-</html>

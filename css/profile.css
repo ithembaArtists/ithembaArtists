@@ -19,7 +19,9 @@
   font-size: 2rem;
   }
 
-
+  .emptyCart{
+    display: none;
+  }
 
 
 /* Header */

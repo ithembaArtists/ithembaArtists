@@ -1,37 +1,51 @@
-getCurrency(products.largeImage.price, products.largeImage.class);
+getCurrency(artType, products.largeImage.class);
+// getCurrency(products.video, products.video.class);
+// getCurrency(products.frameMount, products.frameMount.class);
+// getCurrency(products.frameWithoutMount, products.frameWithoutMount.class);
+// getCurrency(products.giftWrap, products.giftWrap.class);
+// getCurrency(products.message, products.message.class);
+var currencyDifference;
 
-extras.forEach(function(c){
-  console.log(c);
-  getCurrency(c.price, c.class);
-})
+function getCurrency(product, classname, countryCode){
+  
+  if(countryCode){
+    
+    // FIND COUNTRY PRICE
+    $.get("https://restcountries.eu/rest/v1/alpha/" + countryCode, function (data) {
+      currencyMatchSymbol(data.currencies[0], classname, product);
+    });
+    // find country price
 
-// getCurrency(18, '.priceSize');
-// getCurrency(11, '.videoPrice');
-// getCurrency(18, '.frameMount');
-// getCurrency(14, '.frameWithoutMount');
-// getCurrency(7, '.giftWrap');
-// getCurrency(8, '.messageChild');
-function getCurrency(input, classname){
-  $.get("https://ipinfo.io", function(response) {
-    // console.log(response.city, response.country);
-    // $.get("https://restcountries.eu/rest/v1/alpha/" + response.country, function (data) {
-      // console.log(data);
-  $.get("https://restcountries.eu/rest/v1/alpha/ZA", function (data) {
-        currencyMatchSymbol(data.currencies[0]);
-      }
-    );
-  }, "jsonp");
+  } else {
+    // FIND WHERE USER IS
+    $.get("https://ipinfo.io", function(response) {
+      // console.log(response.city, response.country);
+      // $.get("https://restcountries.eu/rest/v1/alpha/" + response.country, function (data) {
+        // console.log(data);
+    $.get("https://restcountries.eu/rest/v1/alpha/ZA", function (data) {
+          currencyMatchSymbol(data.currencies[0], classname, product);
+        }
+      );
+    }, "jsonp");
+    // find where user is
+  }
+}
 
-  function currencyMatchSymbol(code) {
+  function currencyMatchSymbol(code, classname, product) {
     var data = currencyCodes;
-      // the input which contains the code
+      // the product which contains the code
       $.each(data, function(i, v){
           if(i === code){
+              
+              // CURRENCY SYMBOL
               $(classname).html(v.symbol);
-              convert(input, v.code, classname);
+              products.currencyType = v.symbol;
+              
+              // CONVERT TO CURRENCY
+              convert(product, v.code, classname);
 
               /* CHECK IF SOUTH AFRICAN */
-              console.log('v.code:', v.code);
+              // console.log('v.code:', v.code);
               if(v.code === "ZAR"){
                 $('.payfast').show();
                 $('.paypal').hide();
@@ -45,13 +59,26 @@ function getCurrency(input, classname){
       });
   }
 
-  function convert(price, code, classname) {
-    $.get("https://free.currconv.com/api/v7/convert?q=PHP_" + code + ",PHP_EUR&compact=ultra&apiKey=d9c9c252da47042dee7d", function(response) {
-      var currencyless = price/response.PHP_EUR;
+  function convert(product, code, classname) {
+    $.get("https://free.currconv.com/api/v7/convert?q=PHP_" + code + ",PHP_ZAR&compact=ultra&apiKey=d9c9c252da47042dee7d", function(response) {
+      // FIND AMOUNT IN ANOTHER CURRENCY
+      // console.log('response: ', response);
+      var currencyless = product.price/response.PHP_ZAR;
       var currency = currencyless * response["PHP_" + code];
       currency = currency.toFixed(0);
+
+      
+      // SAVE CURRENCY DIFFERENCE
+      currencyDifference = currency/product.price;
+
+      // SAVE ART TYPE
+      products["largeImage"].converted = currencyDifference * artType.price;
+
+
+      displayOtherProducts();
       // console.log(code,currency);
-      $(classname).append(currency);
+      $(classname).append(currency);   
+
       // console.log('letterTotal', letterTotal);
       // ADJUST PRICE SIZE FONT
       if(classname === '.priceSize'){
@@ -67,16 +94,12 @@ function getCurrency(input, classname){
       console.log('Currency exchange server is down, only using SA prices.'); // or whatever
       $('.currencyIssue').show();
       networkError = true;
-      $('.priceSize').html('RPRICE')
-      $('.videoPrice').html('RPRICE')
-      $('.frameMount').html('RPRICE')
-      $('.frameWithoutMount').html('RPRICE')
-      $('.giftWrap').html('RPRICE')
-      $('.messageChild').html('RPRICE')
+      currencyDifference = 1;
+      products.currencyType = 'R';
+      $(product.class).html(products.currencyType + product.price);
+      displayOtherProducts();
     });
   }
-
-}
 
 /*
 * CURRENCY DROPDOWN
@@ -86,10 +109,36 @@ function toggleDropdown() {
   $('.currencyDropdown').toggle();
 }
 
+function displayOtherProducts() {
+  console.log('currency difference: ' , currencyDifference);
+  // getCurrency(products.video, products.video.class);
+// getCurrency(products.frameMount, products.frameMount.class);
+// getCurrency(products.frameWithoutMount, products.frameWithoutMount.class);
+// getCurrency(products.giftWrap, products.giftWrap.class);
+// getCurrency(products.message, products.message.class);
+  $(products.video.class).html(products.currencyType + products.video.price * currencyDifference);
+  products.video.converted =  products.video.price * currencyDifference;
+  $(products.frameMount.class).html(products.currencyType + products.frameMount.price * currencyDifference);
+  products.frameMount.converted =  products.frameMount.price * currencyDifference;
+  $(products.frameWithoutMount.class).html(products.currencyType + products.frameWithoutMount.price * currencyDifference);
+  products.frameWithoutMount.converted =  products.frameWithoutMount.price * currencyDifference;
+  $(products.giftWrap.class).html(products.currencyType + products.giftWrap.price * currencyDifference);
+  products.giftWrap.converted =  products.giftWrap.price * currencyDifference;
+  $(products.message.class).html(products.currencyType + products.message.price * currencyDifference);
+  products.message.converted =  products.message.price * currencyDifference;
+
+}
+
 function currencySelected() {
   // var currency = $('.currencyDropdown select').value;
   var code = document.getElementById("chooseCurrency").value;
-  // console.log('currency: ', currency);
-  currencyMatchSymbol(code);
+  console.log('code: ', code);
+  // currencyMatchSymbol(code);
+  getCurrency(artType, products.largeImage.class, code);
+  // getCurrency(products.video, products.video.class, code);
+  // getCurrency(products.frameMount, products.frameMount.class, code);
+  // getCurrency(products.frameWithoutMount, products.frameWithoutMount.class, code);
+  // getCurrency(products.giftWrap, products.giftWrap.class, code);
+  // getCurrency(products.message, products.message.class, code);
 }
 // currency dropdown

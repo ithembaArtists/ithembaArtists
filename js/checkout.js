@@ -69,13 +69,14 @@ function getUser(){
   }
   buyer.cart += ' ' + productDetails.date + "(" + productDetails.image + ").";
   buyer.description = "Name: " + productDetails.name + " (" + productDetails.date + ") Image: " + productDetails.image + "  Extras: " + buyer.cart;
-  buyer.fullName = buyer.firstName + buyer.lastName;
+  buyer.fullName = buyer.firstName + " " + buyer.lastName;
   return buyer;
 }
 
 function payFastPayment(){
   var buyer = getUser();
   payFast(buyer);
+  submitForm(buyer.fullName, buyer.email_address, buyer.message);
   $('.payfast, .modal-footer').hide();
   $('.modal-body').html('One moment, redirecting you to payfast...');
   setTimeout(function(){ 

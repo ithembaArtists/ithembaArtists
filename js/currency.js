@@ -110,7 +110,7 @@ function toggleDropdown() {
 }
 
 function displayOtherProducts() {
-  console.log('currency difference: ' , currencyDifference);
+  // console.log('currency difference: ' , currencyDifference);
   // getCurrency(products.video, products.video.class);
 // getCurrency(products.frameMount, products.frameMount.class);
 // getCurrency(products.frameWithoutMount, products.frameWithoutMount.class);

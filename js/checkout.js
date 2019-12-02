@@ -1,21 +1,8 @@
 var cart = {};
 var total;
 
-function goToPayfastCheckout(){
-  
-  $('.payfast_click_me').click();
-  // if (Object.prototype.hasOwnProperty.call(cart, prop)) {
-  //   // do stuff
-  //   total = cart[prop] + total;
-  //   console.log('prop',cart[prop]);
-  // }
-  // var item = "Hello world";
-  // window.location = "https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14342506&amp;item_name=" + item + "&amp;item_description=Test+Description&amp;amount=10.00&amp;return_url=https%3A%2F%2Fwww.google.com%2F&amp;cancel_url=https%3A%2F%2Fwww.google.com%2F";
-  // str.link("https://www.w3schools.com");
-}
-
 function addToCart(type){
-  console.log('products[type]', products[type]);
+  // console.log('products[type]', products[type]);
   if(!cart[type] || cart[type] === 0){
     $('.checkout .cart').append('<p class="' + type + '">' + products[type].text + ' (' + products.currencyType + products[type].converted + ') <button  onclick=\'removeFromCart("' + type +  '")\' class="px-1 pt-0 btn btn-danger"><img width="20px" src="img/website/product/delete.png" alt="delete"></button></p>');
   }
@@ -27,9 +14,7 @@ function calculateTotal(){
   total = 0;
   for (var prop in cart) {
     if (Object.prototype.hasOwnProperty.call(cart, prop)) {
-        // do stuff
         total = cart[prop] + total;
-        console.log('prop',cart[prop]);
       }
   }
   // console.log('total', total);
@@ -40,27 +25,65 @@ function calculateTotal(){
     $('.checkout').fadeOut(500);
     $('#checkoutModal').modal('hide');
   }
-
 }
 
 function addVideo(){
   addToCart("video");
   $('.cartOverlay').fadeIn(500);
-
 }
 
 function buyingPainting() { 
-  // $('.payfast_anchor').attr('href','https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=14342506&amp;item_name=Test&amp;item_description=Test+Description&amp;amount=10.00&amp;return_url=https%3A%2F%2Fwww.google.com%2F&amp;cancel_url=https%3A%2F%2Fwww.google.com%2F');
-  $('.itemName').attr('value','HELLO WORLD');
-  $('.itemPrice').attr('value','400');
+  addToCart('largeImage');
   $('.checkoutModal').show();
   $('.cartOverlay').fadeOut(500);
-  // console.log('FIND PAINTING'); // NEED TO DO
-  addToCart('largeImage'); // temp
+}
+
+function payFast(buyer){
+  $('.itemName').attr('value', buyer.cart);
+  $('#item_description').attr('value', buyer.description);
+  $('.itemPrice').attr('value', buyer.total);
+  $('#payment_id').attr('value', buyer.invoiceId);
+  $('#name_first').attr('value', buyer.firstName);
+  $('#name_last').attr('value', buyer.lastName);
+  $('#email_address').attr('value', buyer.email_address);
+  console.log('payfast', buyer);
+}
+
+function getUser(){
+  var buyer = {};
+  buyer.firstName = $('#name_first').val();
+  buyer.lastName = $('#name_last').val();
+  buyer.email_address = $('#email_address').val();
+  buyer.message = 'Hello \n This is a test <br> I hope there are some line breaks in this email!!';
+  buyer.subject = "Test Formspree" 
+
+  buyer.total = 0;
+  buyer.cart = productDetails.name;
+  console.log('productDetails', productDetails);
+  for (var prop in cart) {
+    if (Object.prototype.hasOwnProperty.call(cart, prop)) {
+        total = cart[prop] + total;
+        buyer.cart += '&' + prop + '_' + cart[prop];
+        buyer.total += total;
+      }
+  }
+  buyer.cart += ' ' + productDetails.date + "(" + productDetails.image + ").";
+  buyer.description = "Name: " + productDetails.name + " (" + productDetails.date + ") Image: " + productDetails.image + "  Extras: " + buyer.cart;
+  buyer.fullName = buyer.firstName + buyer.lastName;
+  return buyer;
+}
+
+function payFastPayment(){
+  var buyer = getUser();
+  payFast(buyer);
+  $('.payfast, .modal-footer').hide();
+  $('.modal-body').html('One moment, redirecting you to payfast...');
+  setTimeout(function(){ 
+    console.log('go to payfast');
+  },1000);
 }
 
 function removeFromCart(type){
-  // console.log('remove:', type);
   $('.cart .' + type).remove();
   cart[type] = 0;
   calculateTotal();
@@ -76,10 +99,8 @@ function addExtras(){
   });
 }
 
-
-
 $(document).scroll(function() {
-  console.log('total', total);
+  // console.log('total', total);
   if ($(document).scrollTop() >= 50 && !jQuery.isEmptyObject(cart) && total !== 0) {
     $('.checkout').fadeIn(500);
   } else {

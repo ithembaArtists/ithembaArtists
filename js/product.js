@@ -4,6 +4,7 @@
 var imageObj;
 var imageName = location.href.split('#')[1];
 var artType;
+var productDetails = {}; 
 
 images.forEach(function(c, index){
   if(c.src == imageName){
@@ -16,8 +17,15 @@ images.forEach(function(c, index){
 // DISPLAY IMAGE OBJ
 function displayImage(obj){
   $('.kidsName').html(obj.name);
+  productDetails.name = obj.name;
   $('.kidsDescription').html(obj.description);
+  productDetails.description = obj.description;
   $('.kidsArt').attr('src', 'img/' + obj.month + obj.year + "/preview/" + obj.src);
+  productDetails.image = 'img/' + obj.month + obj.year + "/preview/" + obj.src;
+  // save date
+  productDetails.date = obj.date;
+  // save size
+  productDetails.size = obj.size;
 
 }
 // display imageObj

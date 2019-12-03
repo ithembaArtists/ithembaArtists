@@ -20,9 +20,10 @@ function getCurrency(product, classname, countryCode){
     // FIND WHERE USER IS
     $.get("https://ipinfo.io", function(response) {
       // console.log(response.city, response.country);
-      // $.get("https://restcountries.eu/rest/v1/alpha/" + response.country, function (data) {
-        // console.log(data);
-    $.get("https://restcountries.eu/rest/v1/alpha/ZA", function (data) {
+      $.get("https://restcountries.eu/rest/v1/alpha/" + response.country, function (data) {
+        
+        // FAKE SOUTH AFRICA
+    // $.get("https://restcountries.eu/rest/v1/alpha/ZA", function (data) {
           currencyMatchSymbol(data.currencies[0], classname, product);
         }
       );
@@ -36,16 +37,28 @@ function getCurrency(product, classname, countryCode){
       // the product which contains the code
       $.each(data, function(i, v){
           if(i === code){
+
+            // HACK PAYPAL TO CORRECT CURRENCY 
+            // console.log('v.code:', v.code);
+            // var my_awesome_script = document.createElement('script');
+            // my_awesome_script.setAttribute('src','https://www.paypal.com/sdk/js?client-id=AUVR9O8iFRN2USlVCe2xjQ95kNg0OLuCEm4pJZ4t6SiE-3Oe4jAA9fFDnIOd_-VqL2C16CYeR-9w7yw7&currency=' + v.code);
+            // document.head.appendChild(my_awesome_script);
+            // setTimeout(function(){ 
+            //   var my_awesome_script = document.createElement('script');
+            //   // paypal script
+            //   my_awesome_script.setAttribute('src','https://ithembaartists.github.io/ithembaArtists/js/paypalCustom.js');
+            //   document.head.appendChild(my_awesome_script);
+            // }, 2000);
               
               // CURRENCY SYMBOL
               $(classname).html(v.symbol);
+              $('.currencySymbol').html(v.symbol);
               products.currencyType = v.symbol;
               
               // CONVERT TO CURRENCY
               convert(product, v.code, classname);
 
-              /* CHECK IF SOUTH AFRICAN */
-              // console.log('v.code:', v.code);
+              /* CHECK IF SOUTH AFRICAN */              
               if(v.code === "ZAR"){
                 $('.payfast').show();
                 $('.paypal').hide();

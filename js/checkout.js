@@ -1,5 +1,6 @@
 var cart = {};
 var total;
+var buyer = {}
 
 function addToCart(type){
   // console.log('products[type]', products[type]);
@@ -12,12 +13,14 @@ function addToCart(type){
 
 function calculateTotal(){
   total = 0;
+  // console.log('total', total);
   for (var prop in cart) {
     if (Object.prototype.hasOwnProperty.call(cart, prop)) {
         total = cart[prop] + total;
+        console.log('cart[prop]', cart[prop]);
       }
-  }
-  // console.log('total', total);
+    }
+    // console.log('total', total);
   $('.checkout .total').html(products.currencyType + total);
   
   // EMPTY CART
@@ -46,27 +49,27 @@ function payFast(buyer){
   $('#name_first').attr('value', buyer.firstName);
   $('#name_last').attr('value', buyer.lastName);
   $('#email_address').attr('value', buyer.email_address);
-  console.log('payfast', buyer);
 }
 
 function getUser(){
   var buyer = {};
+  total = 0;
+  buyer.total = 0;
   buyer.firstName = $('#name_first').val();
   buyer.lastName = $('#name_last').val();
   buyer.email_address = $('#email_address').val();
-  buyer.message = 'Hello \n This is a test <br> I hope there are some line breaks in this email!!';
-  buyer.subject = "Test Formspree" 
+  // buyer.message = 'Hello \n This is a test. I hope there are some line breaks in this email!!';
+  // buyer.subject = "Test Formspree" 
 
-  buyer.total = 0;
   buyer.cart = productDetails.name;
-  console.log('productDetails', productDetails);
+  // console.log('productDetails', productDetails);
   for (var prop in cart) {
     if (Object.prototype.hasOwnProperty.call(cart, prop)) {
         total = cart[prop] + total;
         buyer.cart += '&' + prop + '_' + cart[prop];
-        buyer.total += total;
       }
-  }
+    }
+  buyer.total = total;
   buyer.cart += ' ' + productDetails.date + "(" + productDetails.image + ").";
   buyer.description = "Name: " + productDetails.name + " (" + productDetails.date + ") Image: " + productDetails.image + "  Extras: " + buyer.cart;
   buyer.fullName = buyer.firstName + " " + buyer.lastName;
@@ -76,11 +79,12 @@ function getUser(){
 function payFastPayment(){
   var buyer = getUser();
   payFast(buyer);
-  submitForm(buyer.fullName, buyer.email_address, buyer.message);
+  // submitForm(buyer.fullName, buyer.email_address, buyer.message); // send email
   $('.payfast, .modal-footer').hide();
   $('.modal-body').html('One moment, redirecting you to payfast...');
   setTimeout(function(){ 
-    console.log('go to payfast');
+    console.log('buyer', buyer);
+    // quickPostPaymentToPayFast(document.getElementById('payfast_url').value);
   },1000);
 }
 

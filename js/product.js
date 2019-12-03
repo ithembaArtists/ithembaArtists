@@ -30,6 +30,23 @@ function displayImage(obj){
 }
 // display imageObj
 
+function submitIdea(){
+  var buyer = [];
+  $('.idea_name').attr('value', buyer.email_address);
+  $('.idea_email_address').attr('value', buyer.email_address);
+  var buyer = {};
+  buyer.name = $('.idea_name').val();
+  buyer.email_address = $('.idea_email_address').val();
+  buyer.message = $('.idea_email_address').val() + " Price: " + products.currencyType + $('.idea_price').val();
+  console.log('buyer: ', buyer);
+  submitForm(buyer.name, buyer.email_address, buyer.message); // send email
+}
+
+// DO YOU WANT MORE?
+$('#moreExtras').click(function(){
+  $('.customExtras').toggle();
+})
+
 // DISPLAY PRICES
 function displayPrices(obj){
   if(obj.size === 'card'){

@@ -199,8 +199,8 @@
         <div class='form-group form-check'>
           <input selected='true' checked type="checkbox" class='frameMount form-check-input' id='exampleCheck'>
           <p class='priceLabel form-check-label' for='exampleCheck1'>Frame with mount</p>
-          <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='frameMount'>£18</span></p>
-          <p class="round red frameMount small-price d-none d-sm-block">€18</p>
+          <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='frameMount'></span></p>
+          <p class="round red frameMount small-price d-none d-sm-block"></p>
         </div>
         <div class='form-group form-check'>
           <input type="checkbox" class='frameWithoutMount form-check-input' id='exampleCheck'>
@@ -221,19 +221,37 @@
           <p class="round red messageChild small-price d-none d-sm-block"></span></p>
         </div>
         <div class='form-group form-check'>
-          <input type="checkbox" class='form-check-input' id='exampleCheck'>
+          <input type="checkbox" class='form-check-input' id='moreExtras'>
           <p class='priceLabel form-check-label' for='exampleCheck1'>I would like something else...</p>        
         </div>
-        <div class='form-group' hidden>
+        <div class='form-group customExtras'>
           <p class='mb-1'>What would you like bundled with your image:</p>
           <textarea class='w-100' name="" id="" rows="3"></textarea>          
-          <p class='mb-0'>I'm willing to pay: </p>
-          <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">€</span>
-              </div>
-              <input type="number" class="form-control col-3" placeholder="amount" aria-label="Username" aria-describedby="basic-addon1">
+          <div class="input-group">
+              <table class='mt-0'>
+                <tr>
+                </tr>
+                <tr>
+                <td>I'm willing to pay: </td>
+                <td>
+
+                    <div class="input-group-prepend">
+                        <span class="input-group-text currencySymbol" id="basic-addon1"></span>
+                        <input type="number" class="form-control idea_price" placeholder="amount" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+
+                </td>
+                </tr>
+                <tr>
+                <td>Your Name: </td><td><input type="text" class="idea_name" placeholder='So we know who you are' /></td>
+                </tr>
+                <tr>
+                <td>Your Email: </td><td><input type="text" class='idea_email_address' placeholder="So we can thank ya!" /></td>
+                </tr>
+              </table>
             </div>
+            <hr>
+            <button class='btn btn-success' onclick='submitIdea()'> Submit idea </button>
       
           </div>
 
@@ -402,7 +420,7 @@
                 <input type="hidden" name="confirmation_address" id="confirmation_address" value="">
                 <p><b>Please enter your details:</b></p>
                 
-                <table class='mt-0'>
+                <table class='ideaTable mt-0'>
                 <tr class="pt-0 mt-0" hidden>
                 <td>Invoice Number: </td><td><input type="text" name="payment_id" id="payment_id" value="KIDSNAME_CART_6.png" /></td>
                 </tr>
@@ -460,19 +478,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <script class='currencyScript' src></script>
   <script src="js/photoGallery.js"></script>
+
+
+  THIS IS TEMP REMOVE THIS
+  <script src="https://www.paypal.com/sdk/js?client-id=AUVR9O8iFRN2USlVCe2xjQ95kNg0OLuCEm4pJZ4t6SiE-3Oe4jAA9fFDnIOd_-VqL2C16CYeR-9w7yw7&currency=EUR"></script> 
+  <script src="js/paypalCustom.js"></script> 
+  This is temp comment out -->
   <!-- <script src="js/includeJS.js"></script>  -->
 
   <script>
   
-  var my_awesome_script = document.createElement('script');
-my_awesome_script.setAttribute('src','https://www.paypal.com/sdk/js?client-id=AUVR9O8iFRN2USlVCe2xjQ95kNg0OLuCEm4pJZ4t6SiE-3Oe4jAA9fFDnIOd_-VqL2C16CYeR-9w7yw7&currency=EUR');
-document.head.appendChild(my_awesome_script);
-setTimeout(function(){ 
-  var my_awesome_script = document.createElement('script');
-  // paypal script
-  my_awesome_script.setAttribute('src','https://ithembaartists.github.io/ithembaArtists/js/paypalCustom.js');
-  document.head.appendChild(my_awesome_script);
-}, 2000);
+
 
 
   </script>

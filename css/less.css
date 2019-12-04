@@ -64,6 +64,12 @@
     font-size: 52px;
   }
 }
+/* anything less than 767 */
+@media (max-width: 767px) {
+  .page-footer {
+    background: #008276;
+}
+}
 /* anything less than 705 */
 @media (max-width: 705px) {
 
@@ -86,6 +92,10 @@
 
 /* anything less than 468 */
 @media (max-width: 468px) {
+
+  .extras {
+    font-size: xx-large;
+  }
 
   .header, .profileHeader {
     height: auto !important;

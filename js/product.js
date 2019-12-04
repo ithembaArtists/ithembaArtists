@@ -25,6 +25,7 @@ function displayImage(obj){
   // save date
   productDetails.date = obj.date;
   // save size
+  // console.log('obj.size', obj.size);
   productDetails.size = obj.size;
 
 }
@@ -37,7 +38,7 @@ function submitIdea(){
   var buyer = {};
   buyer.name = $('.idea_name').val();
   buyer.email_address = $('.idea_email_address').val();
-  buyer.message = $('.idea_email_address').val() + " Price: " + products.currencyType + $('.idea_price').val();
+  buyer.message = $('.idea_message').val() + " Price: " + products.currencyType + $('.idea_price').val();
   console.log('buyer: ', buyer);
   submitForm(buyer.name, buyer.email_address, buyer.message); // send email
 }
@@ -49,17 +50,30 @@ $('#moreExtras').click(function(){
 
 // DISPLAY PRICES
 function displayPrices(obj){
+
   if(obj.size === 'card'){
     artType = products.smallImage;
+    productDetails.price = products.cardImage.price;
+    productDetails.text = products.cardImage.text;
+    productDetails.type = 'cardImage';
   }
   else if(obj.size === 'small'){
     artType = products.smallImage;
+    productDetails.price = products.smallImage.price;
+    productDetails.text = products.smallImage.text;
+    productDetails.type = 'smallImage';
   }
   else if(obj.size === 'medium'){
     artType = products.mediumImage;
+    productDetails.price = products.mediumImage.price;
+    productDetails.text = products.mediumImage.text;
+    productDetails.type = 'mediumImage';
   }
   else if(obj.size === 'large'){
     artType = products.largeImage;
+    productDetails.price = products.largeImage.price;
+    productDetails.text = products.largeImage.text;
+    productDetails.type = 'largeImage';
   }
 }
 // display prices

@@ -58,7 +58,7 @@ function intPopulate(image, index) {
     // SIZE
     if( sidebarSizes.indexOf(image.size) === -1 ) {
       $('.sizesSidebar').append('<dd class="pointer nav-tag" onclick="filterNav(\'size\', \'' + image.size + '\')">' + image.size + '</dd>')
-      $('.sizesMobile').append('<li onclick="mobileSearch(\'sizes\', \'' + image.sizes + '\')"><p>' + image.sizes + '</p></li>');
+      $('.sizesMobile').append('<li onclick="mobileSearch(\'sizes\', \'' + image.size + '\')"><p>' + image.size + '</p></li>');
       sidebarSizes.push(image.size);
     }
     // size

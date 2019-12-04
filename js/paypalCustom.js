@@ -4,16 +4,15 @@ paypal.Buttons({
   createOrder: function(data, actions) {
     var buyer = getUser();
     console.log('buyer: ', buyer);
-    // return actions.order.create({
-    //   purchase_units: [{
-    //     description: 'hello world',
-    //     amount: {
-    //       // currency_code: 'GBP',
-    //       value: '0.15'
-    //     },
+    return actions.order.create({
+      purchase_units: [{
+        description: 'test product final',
+        amount: {
+          // currency_code: 'GBP',
+          value: '4.00'
+        },
         // items:[
         //   {
-        //     currency:"USD",
         //     name:"Denim Woven Shirt",
         //     price:"20.00",
         //     quantity:"1",
@@ -21,8 +20,8 @@ paypal.Buttons({
         //   },
         // ],
 
-      // }]
-    // });
+      }]
+    });
   },
   onApprove: function(data, actions) {
     // Capture the funds from the transaction

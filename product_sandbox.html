@@ -71,7 +71,7 @@
           <!-- dropdown -->
     
           <!-- SEARCH & FILTERS TABLES-->
-           <p class='m-0'>Just want to make a donation <a href="donation.html"><u>please click here.</u></a></p> 
+           <p class='m-0'>Just want to make a donation <a href=""><u>please click here.</u></a></p> 
             <!-- NAV MOBILE -->
             <!-- nav -->
         </div>
@@ -87,7 +87,7 @@
     <div class='cart'></div>
     <p><b><u>Total:</u></b>
     <span class='total'></span></p>
-  <button class='btn btn-success' onclick="buyingPainting()" data-toggle="modal" data-target="#checkoutModal">Checkout 
+  <button class='btn btn-success' onclick="checkout()">Checkout 
     <img class='mb-1' width="20px" src="img/website/product/shopping-cart.png" alt="">
   </button>
 </div>
@@ -226,7 +226,7 @@
         </div>
         <div class='form-group customExtras'>
           <p class='mb-1'>What would you like bundled with your image:</p>
-          <textarea class='w-100 idea_message' name="" id="" rows="3"></textarea>          
+          <textarea class='w-100' name="" id="" rows="3"></textarea>          
           <div class="input-group">
               <table class='mt-0'>
                 <tr>
@@ -362,11 +362,9 @@
   
   <!-- PURCHASE MODAL -->
   <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-hidden="true">
-    
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body">
-            <button onclick='closeModal()' class='modalClose' type="button" class="close" data-dismiss="modal">&times;</button>
           <!-- NO EXTRAS-->
           <div class='noExtras text-center'>
             <img class='w-100 mb-3' src="img/website/extras.png" alt="">
@@ -379,24 +377,21 @@
           </div>
           <!-- no extras -->
 
-        <!-- EXTRAS HAVE BEEN ADDED SO THIS JUST SHOWS PRODUCTS -->              
-        <div class='checkout checkoutModal'> 
-          <p><b>Here's your order so far... </b></p>
-            <div class='cart'></div>
-            <p>
-              <b>
-                <u>Total:</u>
-                <span class='total'></span>
-              </b>
-            </p>
-          </div>          
-
           
         </div>
         <div class="modal-footer">
           <div class='w-100 text-center'>
 
-       
+            <!-- EXTRAS HAVE BEEN ADDED SO THIS JUST SHOWS PRODUCTS -->              
+            <div hidden class='checkout checkoutModal'> 
+              <div class='cart'></div>
+              <p>
+                <b>
+                  <u>Total:</u>
+                  <span class='total'></span>
+                </b>
+              </p>
+            </div>                 
             <!-- extras added -->
 
             <!-- NO EXTRAS -->
@@ -413,13 +408,13 @@
               <!-- PAYFAST -->
               <div class='payfast text-left'>
                 <!-- PAYFAST PAYMENT -->
-                <input type="hidden" name="payfast_url" id="payfast_url" value="https://www.payfast.co.za/eng/process">
+                <input type="hidden" name="payfast_url" id="payfast_url" value="https://sandbox.payfast.co.za/eng/process">
                 <input type="hidden" name="return_url" id="return_url" value="https://ithembaartists.github.io/ithembaArtists/thankyou.html">
                 <input type="hidden" name="cancel_url" id="cancel_url" value="https://ithembaartists.github.io/ithembaArtists/ohno.html">
                 <input type="hidden" name="notify_url" id="notify_url" value="https://ithembaartists.github.io/ithembaArtists/payfast/payment_notify.html">
                 <input type="hidden" name="item_name" class='itemName' id="item_name" value="DevEnterprise Test Product">
-                <input type="hidden" name="merchant_id" id="merchant_id" value="14342506">
-                <input type="hidden" name="merchant_key" id="merchant_key" value="2hl3hyiaxsoz2">
+                <input type="hidden" name="merchant_id" id="merchant_id" value="10015514">
+                <input type="hidden" name="merchant_key" id="merchant_key" value="bzeky1kbcqp4g">
                 <input type="hidden" name="item_description" id="item_description" value="">
                 <input type="hidden" name="email_confirmation" id="email_confirmation" value="1">
                 <input type="hidden" name="confirmation_address" id="confirmation_address" value="">
@@ -439,18 +434,21 @@
                 <td>Your Last Name: </td><td><input type="text" name="name_last" id="name_last" placeholder='Last Name' /></td>
                 </tr>
                 <tr>
-                <td>Your Email: </td><td><input type="text" name="email_address" id="email_address" placeholder="Your Email" /></td>
+                <td>Your Email: </td><td><input type="text" name="email_address" id="email_address" placeholder="email@email.co.za" /></td>
                 </tr>
                 <tr>
                 <td>&nbsp;</td>
                 </tr>
-            </table>
-            <div class='w-100 text-center'>
-            <button onclick="payFastPayment()" src="https://www.payfast.co.za/images/buttons/paynow_basic_logo.gif" align="bottom" vspace="3" width="95" height="57" alt="Pay Now" title="Pay Now with PayFast" class='btn btn-info payfast'>Pay with payfast <img class='mb-1' width="20px" src="img/website/product/shopping-cart.png" alt=""></button> 
-          </div>
+                <tr class='text-center'>
+                <td>
+                    <button onclick="payFastPayment()" src="https://www.payfast.co.za/images/buttons/paynow_basic_logo.gif" align="bottom" vspace="3" width="95" height="57" alt="Pay Now" title="Pay Now with PayFast" class='btn btn-info payfast'>Pay with payfast <img class='mb-1' width="20px" src="img/website/product/shopping-cart.png" alt=""></button> 
+                
+                </td>
+                </tr>
+                </table>
                 <p class='alert alert-info m-4'> 
                   Hi, we're working hard to get other payment channels up and running but in the meantime at iThemba Schools we use payfast (South African paypal).
-                  So don't panic that prices in the payfast payment portal are displayed in ZAR.
+                  So don't be concerned that prices in the checkout page are displayed in ZAR.
                 </p>
                 </p>
               </div>
@@ -491,28 +489,24 @@
   <script src="js/paypalCustom.js"></script> 
   This is temp comment out --> -->
   <!-- <script src="js/includeJS.js"></script>  -->
-  <!-- <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script> -->
-  <script>
 
-    function closeModal(){
-      $('#checkoutModal').modal('hide');
-    }
+  <script>
   
-      // $('.modal-content').resizable({
-      //     //alsoResize: ".modal-dialog",
-      //     minHeight: 300,
-      //     minWidth: 300
-      //   });
-      //   $('.modal-dialog').draggable();
-    
-      //   $('#checkoutModal').on('show.bs.modal', function() {
-      //     $(this).find('.modal-body').css({
-      //       'max-height': '100%'
-      //     });
-      //   });
-    
-    
-      </script>
+  $('.modal-content').resizable({
+      //alsoResize: ".modal-dialog",
+      minHeight: 300,
+      minWidth: 300
+    });
+    $('.modal-dialog').draggable();
+
+    $('#myModal').on('show.bs.modal', function() {
+      $(this).find('.modal-body').css({
+        'max-height': '100%'
+      });
+    });
+
+
+  </script>
 
 </body>
 </html>

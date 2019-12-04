@@ -58,14 +58,20 @@ function getCurrency(product, classname, countryCode){
               // CONVERT TO CURRENCY
               convert(product, v.code, classname);
 
-              /* CHECK IF SOUTH AFRICAN */              
-              if(v.code === "ZAR"){
-                $('.payfast').show();
-                $('.paypal').hide();
-              } else {
-                $('.payfast').hide();
-                $('.paypal').show();
+              // USE PAYFAST FOR EVERYTHING
+              $('.payfast').show();
+              $('.paypal').hide();
+              if(v.code !== "ZAR"){
+                $('.internationalDisclaimer').show();
               }
+
+              /* CHECK IF SOUTH AFRICAN */              
+              // if(v.code === "ZAR"){
+              //   $('.paypal').hide();
+              // } else {
+              //   $('.payfast').hide();
+              //   $('.paypal').show();
+              // }
               // check if South African
               return;
           }
@@ -85,7 +91,7 @@ function getCurrency(product, classname, countryCode){
       currencyDifference = currency/product.price;
 
       // SAVE ART TYPE
-      products["largeImage"].converted = currencyDifference * artType.price;
+      products[productDetails.type].converted = currencyDifference * productDetails.price;
 
 
       displayOtherProducts();

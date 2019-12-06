@@ -39,7 +39,7 @@ function submitIdea(){
   buyer.name = $('.idea_name').val();
   buyer.email_address = $('.idea_email_address').val();
   buyer.message = $('.idea_message').val() + " Price: " + products.currencyType + $('.idea_price').val();
-  console.log('buyer: ', buyer);
+  // console.log('buyer: ', buyer);
   submitForm(buyer.name, buyer.email_address, buyer.message); // send email
 }
 

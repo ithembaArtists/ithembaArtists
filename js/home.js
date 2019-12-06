@@ -25,12 +25,26 @@ function populate() {
 
 function intPopulate(image, index) {
 
+  // assign classname if sold or new
+  // console.log('image.state: ', image.state);
+  var classnameState;
+  var classnameGrayscale;
+  var link;
+  if(image.state  === "new"){    
+    classnameState = "blue";
+    link = "product.html#" + image.src;
+  } else if (image.state  === "sold"){
+    classnameGrayscale = "grayscale";
+    classnameState = "red";
+    link = "#"
+  }
   // populates gallery
   $('.thumbnailGallery').append("\
-  <div class='col-sm-4 mt-5 thumbnail blue new'>\
-  <a href='product.html#" + image.src +  "'>\
-        <p>new</p>\
+  <div class='col-sm-4 mt-5 thumbnail " + classnameState + " new'>\
+  <a href='" + link + "'>\
+        <p>" + image.state +  "</p>\
         <img \
+          class='" + classnameGrayscale + "' \
           src='img/" + image.month + image.year + "/thumbnail/" + image.src + "' \
           name='" + image.name + "' \
           date='" + image.date + "' \

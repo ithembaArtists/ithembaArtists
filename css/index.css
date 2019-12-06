@@ -195,6 +195,12 @@ width: 100%;
 /* nav */
 
 /* THUMBNAIL */
+
+.grayscale {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
 .thumbnail {
   width: 100%;
   border-radius: 5%;
@@ -223,6 +229,7 @@ height: 55px;
 
 .red p{
   background: #ff4040;
+  z-index: 10;
 }
 
 .blue p {

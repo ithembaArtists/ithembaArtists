@@ -33,12 +33,5 @@ var images = [
   {'month':'12', 'year': '2019', 'date':'December 2019', 'src':'20.png', 'size':'large', 'occassion':'Drawing', 'name':'oyivayo', 'age':'5-6', 'description': 'Picking flowers.', "state": "new"},
   {'month':'12', 'year': '2019', 'date':'December 2019', 'src':'21.png', 'size':'large', 'occassion':'Drawing', 'name':'chanel', 'age':'5-6', 'description': 'Playing with my brother.', "state": "new"},
   {'month':'12', 'year': '2019', 'date':'December 2019', 'src':'22.png', 'size':'large', 'occassion':'Drawing', 'name':'tiyana', 'age':'5-6', 'description': 'Out with my family.', "state": "new"},
-  {'month':'09', 'year': '2019', 'date':'September 2019', 'src':'1.png', 'size':'card', 'occassion':'Christmas', 'name':'chris', 'age':'5-6', 'description': 'A Christmas painting for you.', "state": "new"},
-  {'month':'09', 'year': '2019', 'date':'September 2019', 'src':'2.png', 'size':'card','occassion':'Christmas', 'name':'evan', 'age':'5-6', 'description': 'A Christmas painting for you.', "state": "new"},
-  {'month':'09', 'year': '2019', 'date':'September 2019', 'src':'3.png', 'size':'card','occassion':'Christmas', 'name':'luke', 'age':'5-6', 'description': 'A Christmas painting for you.', "state": "new"},
-  {'month':'09', 'year': '2019', 'date':'September 2019', 'src':'4.png', 'size':'large', 'occassion':'Lufthansa', 'name':'micheline', 'age':'5-6', 'description': 'An airplane drawing.', "state": "new"},
-  {'month':'09', 'year': '2019', 'date':'September 2019', 'src':'5.png', 'size':'large', 'occassion':'Lufthansa', 'name':'ondela', 'age':'5-6', 'description': 'An airplane drawing.', "state": "new"},
-  {'month':'09', 'year': '2019', 'date':'September 2019', 'src':'6.png', 'size':'small', 'occassion':'Lufthansa', 'name':'ronell', 'age':'5-6', 'description': 'An airplane drawing.', "state": "new"},
-  {'month':'09', 'year': '2019', 'date':'September 2019', 'src':'7.png', 'size':'small', 'occassion':'Lufthansa', 'name':'konaldo', 'age':'5-6', 'description': 'An airplane drawing.', "state": "new"}
 ];
 

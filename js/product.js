@@ -24,24 +24,24 @@ function displayImage(obj){
   productDetails.image = 'img/' + obj.month + obj.year + "/preview/" + obj.src;
   // save date
   productDetails.date = obj.date;
-  // save size
-  // console.log('obj.size', obj.size);
+  // save size  
   productDetails.size = obj.size;
+
+  // IF CARD THEN DISPLAY CARD EXTRAS OTHERWISE ACCESORISE
+  console.log('obj.size:', obj.size);
+  if(obj.size ===  "card") {
+    $('.cardExtras').show();
+    $('.frames').hide();
+  } else  {
+    $('.cardExtras').hide();
+    $('.frames').show();
+
+  }
 
 }
 // display imageObj
 
-function submitIdea(){
-  var buyer = [];
-  $('.idea_name').attr('value', buyer.email_address);
-  $('.idea_email_address').attr('value', buyer.email_address);
-  var buyer = {};
-  buyer.name = $('.idea_name').val();
-  buyer.email_address = $('.idea_email_address').val();
-  buyer.message = $('.idea_message').val() + " Price: " + products.currencyType + $('.idea_price').val();
-  // console.log('buyer: ', buyer);
-  submitForm(buyer.name, buyer.email_address, buyer.message); // send email
-}
+
 
 // DO YOU WANT MORE?
 $('#moreExtras').click(function(){
@@ -77,3 +77,25 @@ function displayPrices(obj){
   }
 }
 // display prices
+
+// GIVE FEEDBACK
+
+function giveFeedback(){
+  console.log('max')
+  $('.customExtras').toggle();
+  $('.customExtrasCard').toggle();
+}
+
+function submitIdea(){
+  var buyer = [];
+  $('.idea_name').attr('value', buyer.email_address);
+  $('.idea_email_address').attr('value', buyer.email_address);
+  var buyer = {};
+  buyer.name = $('.idea_name').val();
+  buyer.email_address = $('.idea_email_address').val();
+  buyer.message = $('.idea_message').val() + " Price: " + products.currencyType + $('.idea_price').val();
+  // console.log('buyer: ', buyer);
+  submitForm(buyer.name, buyer.email_address, buyer.message); // send email
+}
+
+// feedback

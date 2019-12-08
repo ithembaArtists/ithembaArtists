@@ -28,7 +28,7 @@
     padding-top: 10px;
   }
 
-  .customExtras{
+  .customExtras, .customExtrasCard{
     display: none;
   }
 
@@ -136,10 +136,16 @@ border-bottom: solid 1px #d6d6d6;
   .idea_name, .idea_email_address {
     width: 100% !important;
   }
+
+  .ideaTable {
+    width: 77%;
+  }
 /* extras */
 
-.ideaTable {
-  width: 77%;
+
+/* CHECKOUT */
+.internationalShipping {
+  display: none;
 }
 
 .modalClose {
@@ -154,4 +160,5 @@ border-bottom: solid 1px #d6d6d6;
     top: -18px;
     background: white;
 }
+/* checkout */
 

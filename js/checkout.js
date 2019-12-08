@@ -2,13 +2,39 @@ var cart = {};
 var total;
 var buyer = {}
 
-function addToCart(type){
+function addMoreShippingWithFrame(product){
+  console.log('Product:', product);
+  console.log('InternationalShipping:', internationalShipping);
+  console.log('CurrencyDifference:', currencyDifference);
+  console.log('Products.internationalFrame:', products.internationalFrame);
+  if(internationalShipping){
+    $('.internationalDelivery').show();
+    $('.southAfricaDelivery').hide();
+    addToCart("international");
+    if(product === 'frameMount' || product === 'frameWithoutMount'){
+      addToCart("internationalFrame");
+      $('.internationalShipping .internationalDisclaimer').show().html('To ship a frame outside of South Africa costs ' /
+       + products.currencyType /
+       + products.internationalFrame.converted);
+      $('.internationalShipping .internationalPrice').show().html(internationalShipping.converted);
+    }
+  }
+  else {
+    $('.southAfricaDelivery').show();
+    $('.internationalDelivery').hide();
+  }
+}
+
+
+
+  function addToCart(type){
   // console.log(type);
   // console.log('products[type]', products[type]);
   if(!cart[type] || cart[type].local === 0){
     $('.checkout .cart').append('<p class="' + type + '">' + products[type].text + ' (' + products.currencyType + products[type].converted + ') <button  onclick=\'removeFromCart("' + type +  '")\' class="px-1 pt-0 btn btn-danger"><img width="20px" src="img/website/product/delete.png" alt="delete"></button></p>');
   }
-  console.log('products[type]: ', products[type]);
+  // console.log('products[type]: ', products[type]);
+  
   cart[type] = {local: products[type].converted, zar: products[type].price};
   calculateTotal();
 }
@@ -46,6 +72,8 @@ function buyingPainting() {
   // are there any extras??
   var total = 0;
   for (var prop in cart) {
+    // console.log('prop:', prop);
+    addMoreShippingWithFrame(prop);
     if (Object.prototype.hasOwnProperty.call(cart, prop)) {
         total += cart[prop].zar;       
     }
@@ -117,15 +145,25 @@ function removeFromCart(type){
   calculateTotal();
 }
 
-function addExtras(){
+function checkedToCart(type){
+  if($('.' + type).is(":checked")){
   $('.cartOverlay').fadeIn(500);
-  var extras = ['frameMount', 'frameWithoutMount', 'giftWrap', 'message'];
-  extras.forEach(function (c) {
-    if($('.' + c).is(":checked")){
-      addToCart(c);
-    }
-  });
+  addToCart(type);
+  } else {
+    removeFromCart(type);
+  }
 }
+
+
+// function addExtras(){
+//   $('.cartOverlay').fadeIn(500);
+//   var extras = ['frameMount', 'frameWithoutMount', 'giftWrap', 'message'];
+//   extras.forEach(function (c) {
+//     if($('.' + c).is(":checked")){
+//       addToCart(c);
+//     }
+//   });
+// }
 
 $(document).scroll(function() {
   // console.log('total', total);

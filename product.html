@@ -170,6 +170,75 @@
     </section>
     <!-- video from artist -->
 
+    <!-- CARD ONLY -->
+    <section class='cardExtras pt-5 pb-5'> 
+      <div class='row'>
+        <div class='col-12'>
+          <h2 class='extras'>EXTRAS FOR YOUR CARD</h2>
+          <p>
+            Not sure what to write? Let the kid do it for you! <br>
+            The child you are sponsoring can leave a message for you! <br>
+            If there's any additional options you would like to see, please let us know! We're always looking for new ways to raise.
+          </p>
+        </div>
+        <div class='col-md-6'>
+          <img src="img/website/card_picture.png" width="100%">
+        </div>
+        <div class='mt-4 mt-md-0 col-md-6'>
+
+            <div class="container d-flex h-100">
+                <div class="row  align-self-center">
+          <div class='form-group form-check'>
+            <input type="checkbox" class='message form-check-input' onclick='checkedToCart("message")'>
+            <p class='priceLabel form-check-label' for='exampleCheck1'>Written message from child </p>
+            <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='messageChild'></span></p>
+            <p class="round red messageChild small-price d-none d-sm-block"></span></p>
+          </div>
+          <div class='form-group form-check'>
+            <input type="checkbox" class='form-check-input' id='moreExtras' onclick='giveFeedback()'>
+            <p class='priceLabel form-check-label' for='exampleCheck1'>I would like something else...</p>        
+          </div>
+          <div class='form-group customExtrasCard'>
+            <p class='mb-1'>What would you like bundled with your image:</p>
+            <textarea class='w-100 idea_message' name="" id="" rows="3"></textarea>          
+            <div class="input-group">
+                <table class='mt-0'>
+                  <tr>
+                  </tr>
+                  <tr>
+                  <td>I'm willing to pay: </td>
+                  <td>
+
+                      <div class="input-group-prepend">
+                          <span class="input-group-text currencySymbol" id="basic-addon1"></span>
+                          <input type="number" class="form-control idea_price" placeholder="amount" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+
+                  </td>
+                  </tr>
+                  <tr>
+                  <td>Your Name: </td><td><input type="text" class="idea_name" placeholder='So we know who you are' /></td>
+                  </tr>
+                  <tr>
+                  <td>Your Email: </td><td><input type="text" class='idea_email_address' placeholder="So we can thank ya!" /></td>
+                  </tr>
+                </table>
+              </div>
+              <hr>
+              <button class='btn btn-success' onclick='submitIdea()'> Submit idea </button>
+        
+            </div>
+
+            <button onclick="addExtras()" class="mt-4 red btn btn-lg btn-danger"> + Add Extras </button>
+
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- card only -->
+
     <!-- FRAMES / EXTRAS -->
     <section class='frames pt-5 pb-5'> 
       <div class='row'>
@@ -198,31 +267,31 @@
                 <div class="row  align-self-center">
 
           <div class='form-group form-check'>
-            <input selected='true' checked type="checkbox" class='frameMount form-check-input' id='exampleCheck'>
+            <input selected='true' type="checkbox" class='frameMount form-check-input' id='exampleCheck' onclick='checkedToCart("frameMount")'>
             <p class='priceLabel form-check-label' for='exampleCheck1'>Frame with mount</p>
             <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='frameMount'></span></p>
             <p class="round red frameMount small-price d-none d-sm-block"></p>
           </div>
           <div class='form-group form-check'>
-            <input type="checkbox" class='frameWithoutMount form-check-input' id='exampleCheck'>
+            <input type="checkbox" class='frameWithoutMount form-check-input' id='exampleCheck' onclick='checkedToCart("frameWithoutMount")'>
             <p class='priceLabel form-check-p' for='exampleCheck1'>Frame without mount </p>
             <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='frameWithoutMount'></span></p>
             <p class="round red frameWithoutMount small-price d-none d-sm-block"></p>
           </div>
           <div class='form-group form-check'>
-            <input type="checkbox" class='giftWrap form-check-input' id='exampleCheck'>
+            <input type="checkbox" class='giftWrap form-check-input' id='exampleCheck' onclick='checkedToCart("giftWrap")'>
             <p class='priceLabel form-check-label' for='exampleCheck1'>Gift wrap </p>
             <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='giftWrap'></span></p>
             <p class="round red giftWrap small-price d-none d-sm-block"></p>
           </div>
           <div class='form-group form-check'>
-            <input type="checkbox" class='message form-check-input' id='exampleCheck'>
+            <input type="checkbox" class='message form-check-input' id='exampleCheck' onclick='checkedToCart("message")'>
             <p class='priceLabel form-check-label' for='exampleCheck1'>Written message from child </p>
             <p class='d-block d-sm-none ml-3'>&nbsp;- <span class='messageChild'></span></p>
             <p class="round red messageChild small-price d-none d-sm-block"></span></p>
           </div>
           <div class='form-group form-check'>
-            <input type="checkbox" class='form-check-input' id='moreExtras'>
+            <input type="checkbox" class='form-check-input' id='moreExtras' onclick='giveFeedback()'>
             <p class='priceLabel form-check-label' for='exampleCheck1'>I would like something else...</p>        
           </div>
           <div class='form-group customExtras'>
@@ -256,7 +325,7 @@
         
             </div>
 
-            <button onclick="addExtras()" class="mt-4 red btn btn-lg btn-danger"> + Add Extras </button>
+            <!-- <button onclick="addExtras()" class="mt-4 red btn btn-lg btn-danger"> + Add Extras </button> -->
 
           </div>
         </div>
@@ -383,6 +452,13 @@
 
         <!-- EXTRAS HAVE BEEN ADDED SO THIS JUST SHOWS PRODUCTS -->              
         <div class='checkout checkoutModal'> 
+          <div class='internationalShipping'>
+            <p>
+              <span class='internationalDisclaimer'></span>
+              <span class='currencySymbol'></span>
+              <span class='internationalPrice'></span>
+            </p>
+          </div>
           <p><b>Here's your order so far... </b></p>
             <div class='cart'></div>
             <p>
@@ -402,8 +478,22 @@
             <!-- extras added -->
 
             <!-- NO EXTRAS -->
-            <p class='noExtras'>
-              <b>Not today,</b> I'm fine with just the picture (<span class='priceSize'></span>).</p>
+            <div class='noExtras'>
+              <p class='southAfricaDelivery'>
+                <b>Not today,</b> I'm fine with just the picture (<span class='priceSize'></span>).
+              </p>
+              <div  class='internationalDelivery'>
+              <p>
+                <b>Not today,</b> I'm fine with just the picture. 
+                <p class='alert bg-alert'>
+                  <b>Please note:</b> Because you are outside South Africa we have to add a
+                  <span class='currencySymbol'></span><span class='deliveryCharge'></span>
+                  delivery charge. Hope this is okay!
+                </p>
+              </p>
+            </div>
+          </div>
+
             <!-- no extras -->
             <section class='checkoutBtns'> 
               <!-- PAYPAL -->
@@ -485,7 +575,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <script class='currencyScript' src></script>
-  <script src="js/photoGallery.js"></script>
+  <!-- <script src="js/photoGallery.js"></script> -->
 
 
   <!-- THIS IS TEMP REMOVE THIS

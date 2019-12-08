@@ -1,3 +1,4 @@
+internationalShipping = false;
 getCurrency(artType, products.largeImage.class);
 // getCurrency(products.video, products.video.class);
 // getCurrency(products.frameMount, products.frameMount.class);
@@ -27,7 +28,18 @@ function getCurrency(product, classname, countryCode){
           currencyMatchSymbol(data.currencies[0], classname, product);
         }
       );
-    }, "jsonp");
+    }, "jsonp").catch(function (){
+      // if fails do south african
+      console.log('Currency exchange server is down, only using SA prices.'); // or whatever     
+      $('.currencyIssue').show();
+      $.get("https://restcountries.eu/rest/v1/alpha/ZA", function (data) {
+        currencyMatchSymbol(data.currencies[0], classname, product);
+      });
+
+      $('.internationalDelivery').show();
+      $('.southAfricaDelivery').hide();
+
+    });
     // find where user is
   }
 }
@@ -61,9 +73,24 @@ function getCurrency(product, classname, countryCode){
               // USE PAYFAST FOR EVERYTHING
               $('.payfast').show();
               $('.paypal').hide();
-              if(v.code !== "ZAR"){
-                $('.internationalDisclaimer').show();
+
+
+              // if(v.code === "ZAR"){ // check if south african  
+              //   internationalShipping = 0;
+              // } else {
+              //   internationalShipping = 100 * currencyDifference;
+              //   $('.internationalShipping .internationalDisclaimer').show().html('To ship a picture outside of South Africa costs: ');
+              //   $('.internationalShipping .internationalPrice').show().html(internationalShipping);
+              // }
+
+
+              /* DEAL WITH INTERNATIONAL PAYMENTS */      
+              if(v.code !== "ZAR"){ // check if south african  
+                internationalShipping = true;
+              } else {
+                internationalShipping = false;
               }
+              // check if South African
 
               /* CHECK IF SOUTH AFRICAN */              
               // if(v.code === "ZAR"){
@@ -117,6 +144,10 @@ function getCurrency(product, classname, countryCode){
       products.currencyType = 'R';
       $(product.class).html(products.currencyType + product.price);
       displayOtherProducts();
+
+      $('.internationalDelivery').show();
+      $('.southAfricaDelivery').hide();
+
     });
   }
 
@@ -145,6 +176,12 @@ function displayOtherProducts() {
   products.giftWrap.converted =  products.giftWrap.price * currencyDifference;
   $(products.message.class).html(products.currencyType + products.message.price * currencyDifference);
   products.message.converted =  products.message.price * currencyDifference;
+  
+  $(products.international.class).html(products.currencyType + products.international.price * currencyDifference);
+  products.international.converted =  products.international.price * currencyDifference;
+  $('.deliveryCharge').html(products.international.converted);
+  $(products.internationalFrame.class).html(products.currencyType + products.internationalFrame.price * currencyDifference);
+  products.internationalFrame.converted =  products.internationalFrame.price * currencyDifference;
 
 }
 

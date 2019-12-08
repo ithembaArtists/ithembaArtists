@@ -8,3 +8,5 @@ products.frameMount = {converted: 400, price: 400, class: '.frameMount', text: '
 products.frameWithoutMount = {converted: 0, price: 300, class: '.frameWithoutMount', text: 'Normal frame'};
 products.giftWrap = {converted: 100, price: 100, class: '.giftWrap', text: 'Gift wrap'};
 products.message = {converted: 150, price: 150, class: '.messageChild', text: 'Message from artist'};
+products.international = {converted: 100, price: 100, class: '.internationalRegular', text: 'International delivery for the painting'};
+products.internationalFrame = {converted: 75, price: 75, class: '.internationalFrame', text: 'Extra delivery cost for frame'};

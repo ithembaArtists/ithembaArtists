@@ -120,7 +120,6 @@ function getCurrency(product, classname, countryCode){
       // SAVE ART TYPE
       products[productDetails.type].converted = currencyDifference * productDetails.price;
 
-
       displayOtherProducts();
       // console.log(code,currency);
       $(classname).append(currency);   
@@ -166,16 +165,16 @@ function displayOtherProducts() {
 // getCurrency(products.frameWithoutMount, products.frameWithoutMount.class);
 // getCurrency(products.giftWrap, products.giftWrap.class);
 // getCurrency(products.message, products.message.class);
-  $(products.video.class).html(products.currencyType + products.video.price * currencyDifference);
-  products.video.converted =  products.video.price * currencyDifference;
-  $(products.frameMount.class).html(products.currencyType + products.frameMount.price * currencyDifference);
-  products.frameMount.converted =  products.frameMount.price * currencyDifference;
-  $(products.frameWithoutMount.class).html(products.currencyType + products.frameWithoutMount.price * currencyDifference);
-  products.frameWithoutMount.converted =  products.frameWithoutMount.price * currencyDifference;
-  $(products.giftWrap.class).html(products.currencyType + products.giftWrap.price * currencyDifference);
-  products.giftWrap.converted =  products.giftWrap.price * currencyDifference;
-  $(products.message.class).html(products.currencyType + products.message.price * currencyDifference);
-  products.message.converted =  products.message.price * currencyDifference;
+  products.video.converted =  (products.video.price * currencyDifference).toFixed(0);
+  $(products.video.class).html(products.currencyType + products.video.converted);
+  products.frameMount.converted =  (products.frameMount.price * currencyDifference).toFixed(0);
+  $(products.frameMount.class).html(products.currencyType + products.frameMount.converted);
+  products.frameWithoutMount.converted =  (products.frameWithoutMount.price * currencyDifference).toFixed(0);
+  $(products.frameWithoutMount.class).html(products.currencyType + products.frameWithoutMount.converted);
+  products.giftWrap.converted =  (products.giftWrap.price * currencyDifference).toFixed(0);
+  $(products.giftWrap.class).html(products.currencyType + products.giftWrap.converted);
+  products.message.converted =  (products.message.price * currencyDifference).toFixed(0);
+  $(products.message.class).html(products.currencyType + products.message.converted);
   
   $(products.international.class).html(products.currencyType + products.international.price * currencyDifference);
   products.international.converted =  products.international.price * currencyDifference;

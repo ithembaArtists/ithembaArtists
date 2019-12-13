@@ -25,6 +25,10 @@
   font-family: 'ChalkDust', sans-serif;
 }
 
+.redFont {
+  color: red;
+}
+
 
 .version{
   position: absolute;

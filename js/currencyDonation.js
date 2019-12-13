@@ -1,6 +1,6 @@
 
 function getCurrency(){
-  
+    console.log('max');
     // FIND WHERE USER IS
     $.get("https://ipinfo.io", function(response) {
       // console.log(response.city, response.country);

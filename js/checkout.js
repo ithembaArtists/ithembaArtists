@@ -90,6 +90,7 @@ function buyingPainting() {
 
 function payFast(buyer){
   $('.itemName').attr('value', buyer.cart);
+  $('#payment_id').attr('value', buyer.id);
   $('#item_description').attr('value', buyer.description);
   $('.itemPrice').attr('value', buyer.total);
   $('#payment_id').attr('value', buyer.invoiceId);
@@ -107,7 +108,7 @@ function getUser(){
   buyer.email_address = $('#email_address').val();
   // buyer.message = 'Hello \n This is a test. I hope there are some line breaks in this email!!';
   // buyer.subject = "Test Formspree" 
-
+  
   buyer.cart = "Child's name: " + productDetails.name + '. Products: ';
   // console.log('productDetails', productDetails);
   // console.log('cart', cart);
@@ -122,6 +123,7 @@ function getUser(){
     }
   buyer.total = total;
   buyer.cart += ' Date: ' + productDetails.date + " Image: " + productDetails.image + ".";
+  buyer.id = productDetails.image;
   buyer.description = "Name: " + productDetails.name + " (" + productDetails.date + ") Image: " + productDetails.image + "  Extras: " + buyer.cart;
   buyer.fullName = buyer.firstName + " " + buyer.lastName;
   return buyer;

@@ -106,6 +106,7 @@ function getCurrency(product, classname, countryCode){
   }
 
   function convert(product, code, classname) {
+
     $.get("https://free.currconv.com/api/v7/convert?q=PHP_" + code + ",PHP_ZAR&compact=ultra&apiKey=d9c9c252da47042dee7d", function(response) {
       // FIND AMOUNT IN ANOTHER CURRENCY
       // console.log('response: ', response);
@@ -147,7 +148,7 @@ function getCurrency(product, classname, countryCode){
       $('.internationalDelivery').show();
       $('.southAfricaDelivery').hide();
 
-    });
+    }, "jsonp");
   }
 
 /*

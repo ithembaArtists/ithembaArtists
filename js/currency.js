@@ -181,7 +181,7 @@ function displayOtherProducts() {
   products.international.converted =  products.international.price * currencyDifference;
   $('.deliveryCharge').html(products.international.converted);
   $(products.internationalFrame.class).html(products.currencyType + products.internationalFrame.price * currencyDifference);
-  products.internationalFrame.converted =  products.internationalFrame.price * currencyDifference;
+  products.internationalFrame.converted =  (products.internationalFrame.price * currencyDifference).toFixed(2);
 
 }
 

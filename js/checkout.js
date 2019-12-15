@@ -3,10 +3,10 @@ var total;
 var buyer = {}
 
 function addMoreShippingWithFrame(product){
-  console.log('Product:', product);
-  console.log('InternationalShipping:', internationalShipping);
-  console.log('CurrencyDifference:', currencyDifference);
-  console.log('Products.internationalFrame:', products.internationalFrame);
+  // console.log('Product:', product);
+  // console.log('InternationalShipping:', internationalShipping);
+  // console.log('CurrencyDifference:', currencyDifference);
+  // console.log('Products.internationalFrame:', products.internationalFrame);
   if(internationalShipping){
     $('.internationalDelivery').show();
     $('.southAfricaDelivery').hide();
@@ -15,8 +15,8 @@ function addMoreShippingWithFrame(product){
       addToCart("internationalFrame");
       $('.internationalShipping .internationalDisclaimer').show().html('To ship a frame outside of South Africa costs ' /
        + products.currencyType /
-       + products.internationalFrame.converted);
-      $('.internationalShipping .internationalPrice').show().html(internationalShipping.converted);
+       + products.internationalFrame.converted);    
+      $('.internationalShipping .internationalPrice').show().html(internationalShipping);
     }
   }
   else {
@@ -28,10 +28,16 @@ function addMoreShippingWithFrame(product){
 
 
   function addToCart(type){
-  // console.log(type);
   // console.log('products[type]', products[type]);
   if(!cart[type] || cart[type].local === 0){
-    $('.checkout .cart').append('<p class="' + type + '">' + products[type].text + ' (' + products.currencyType + products[type].converted + ') <button  onclick=\'removeFromCart("' + type +  '")\' class="px-1 pt-0 btn btn-danger"><img width="20px" src="img/website/product/delete.png" alt="delete"></button></p>');
+    console.log(type);
+    var deleteBtn;
+    if(type == 'international' || type == 'internationalFrame'){
+      deleteBtn = ""
+    }else{
+      deleteBtn = '<button onclick=\'removeFromCart("' + type +  '")\' class="px-1 pt-0 btn btn-danger"><img width="20px" src="img/website/product/delete.png" alt="delete"></button>'
+    }
+    $('.checkout .cart').append('<p class="' + type + '">' + products[type].text + ' (' + products.currencyType + products[type].converted + ')' + deleteBtn + '</p>');
   }
   // console.log('products[type]: ', products[type]);
   
@@ -46,7 +52,8 @@ function calculateTotal(){
   for (var prop in cart) {
     if (Object.prototype.hasOwnProperty.call(cart, prop)) {
       // console.log('cart[prop]', cart[prop]);
-        total = cart[prop].local + total;
+        total = parseInt(cart[prop].local) + total;
+        // console.log(total);
       }
     }
     // console.log('total', total);
@@ -116,7 +123,7 @@ function getUser(){
   for (var prop in cart) {
     if (Object.prototype.hasOwnProperty.call(cart, prop)) {
         total = cart[prop].zar + total; 
-        console.log('cart[prop]', cart[prop]); 
+        // console.log('cart[prop]', cart[prop]); 
         // console.log('prop', prop);
         buyer.cart += '&' + prop + ' ';
       }
@@ -136,7 +143,7 @@ function payFastPayment(){
   $('.payfast, .modal-footer').hide();
   $('.modal-body').html('One moment, redirecting you to payfast...');
   setTimeout(function(){ 
-    console.log('buyer', buyer);
+    // console.log('buyer', buyer);
     quickPostPaymentToPayFast(document.getElementById('payfast_url').value);
   },1000);
 }
